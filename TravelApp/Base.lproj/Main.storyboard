@@ -417,9 +417,8 @@
                                 <color key="textColor" name="textDarkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dEJ-Jn-rDN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dEJ-Jn-rDN">
                                 <rect key="frame" x="16" y="127" width="361" height="642"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Zfw-uB-3ur" id="oD1-s8-kak"/>
@@ -430,8 +429,12 @@
                         <viewLayoutGuide key="safeArea" id="5Ru-YC-p9K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dEJ-Jn-rDN" firstAttribute="top" secondItem="AcL-k4-uMn" secondAttribute="bottom" constant="8" symbolic="YES" id="7v8-t4-kfu"/>
                             <constraint firstItem="AcL-k4-uMn" firstAttribute="leading" secondItem="5Ru-YC-p9K" secondAttribute="leading" constant="16" id="IPN-fs-7Cy"/>
+                            <constraint firstItem="dEJ-Jn-rDN" firstAttribute="bottom" secondItem="5Ru-YC-p9K" secondAttribute="bottom" id="Ivt-0w-EuT"/>
                             <constraint firstItem="5Ru-YC-p9K" firstAttribute="trailing" secondItem="AcL-k4-uMn" secondAttribute="trailing" constant="16" id="YWq-5d-Ced"/>
+                            <constraint firstItem="dEJ-Jn-rDN" firstAttribute="trailing" secondItem="AcL-k4-uMn" secondAttribute="trailing" id="gla-nt-toO"/>
+                            <constraint firstItem="dEJ-Jn-rDN" firstAttribute="leading" secondItem="AcL-k4-uMn" secondAttribute="leading" id="nhD-pz-00B"/>
                             <constraint firstItem="AcL-k4-uMn" firstAttribute="top" secondItem="5Ru-YC-p9K" secondAttribute="top" id="rqk-eC-VfP"/>
                         </constraints>
                     </view>
@@ -479,7 +482,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HKJ-lA-AaU"/>
+        <segue reference="GP2-hu-Yqy"/>
         <segue reference="hzO-HA-6gQ"/>
     </inferredMetricsTieBreakers>
     <resources>
