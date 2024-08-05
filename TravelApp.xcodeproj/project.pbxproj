@@ -165,13 +165,7 @@
 		1165DE7C2C3E67D700FDD934 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
-				113634A22C5E9EF0007B807F /* SourceSansPro-BlackItalic.ttf */,
-				113634A02C5E9E9C007B807F /* SourceSansPro-Black.ttf */,
-				1136349E2C5E9978007B807F /* Montserrat-Thin.ttf */,
-				1136349A2C5E9886007B807F /* Montserrat-Light.ttf */,
-				113634982C5E9841007B807F /* Montserrat-ExtraLight.ttf */,
-				1136349C2C5E98D1007B807F /* Montserrat-Regular.ttf */,
-				113634962C5E944B007B807F /* SourceSans3-Bold.ttf */,
+				11D3BF5C2C60FBBC00CD3A61 /* Fonts */,
 				114AD3882C49B4170036F32B /* Constant */,
 				1165DE7D2C3E67D700FDD934 /* AppDelegate.swift */,
 				1165DE7F2C3E67D700FDD934 /* SceneDelegate.swift */,
@@ -291,6 +285,20 @@
 				119761EE2C3E8252003C941E /* UIHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		11D3BF5C2C60FBBC00CD3A61 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				113634A22C5E9EF0007B807F /* SourceSansPro-BlackItalic.ttf */,
+				113634A02C5E9E9C007B807F /* SourceSansPro-Black.ttf */,
+				1136349E2C5E9978007B807F /* Montserrat-Thin.ttf */,
+				113634982C5E9841007B807F /* Montserrat-ExtraLight.ttf */,
+				1136349C2C5E98D1007B807F /* Montserrat-Regular.ttf */,
+				113634962C5E944B007B807F /* SourceSans3-Bold.ttf */,
+				1136349A2C5E9886007B807F /* Montserrat-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		11E8C7272C48016500C8889D /* Model */ = {
