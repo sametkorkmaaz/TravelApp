@@ -75,6 +75,7 @@
             <size key="customSize" width="27" height="200"/>
             <connections>
                 <outlet property="HomeCellObj" destination="9UY-QZ-4uZ" id="yuU-w0-j0s"/>
+                <outlet property="collectionViewCategoriText" destination="39h-wp-qzQ" id="KeP-tO-OG5"/>
                 <outlet property="collectionViewDescriptionText" destination="8h2-tt-HQR" id="dLU-s1-kDy"/>
             </connections>
             <point key="canvasLocation" x="111.45038167938931" y="70.422535211267615"/>

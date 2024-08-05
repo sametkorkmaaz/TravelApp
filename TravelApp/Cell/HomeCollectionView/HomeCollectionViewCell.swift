@@ -11,7 +11,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var HomeCellObj: UIView!
     @IBOutlet weak var collectionViewDescriptionText: UILabel!
-    
+    @IBOutlet weak var collectionViewCategoriText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +20,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         UIHelper.roundCorners(HomeCellObj, radius: 10)
         if let customFont = UIFont(name: "SourceSans3-Bold", size: 15.0) {
             collectionViewDescriptionText.font = customFont
+            collectionViewCategoriText.font = customFont
         } else {
             print("Font yüklenemedi.")
         }
