@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct FlightModel: Codable{
+    let departureCity: String?
+    let arrivalCity: String?
+    let airport: String?
+    let price: String?
+    let date: String?
+    let arrivalCountryCode: String?
+    
+}

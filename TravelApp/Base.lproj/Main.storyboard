@@ -58,11 +58,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ksW-O0-6oz"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where's your next destination?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-W2-B8k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-W2-B8k">
                                 <rect key="frame" x="16" y="198" width="361" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" name="neon_white"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Where's your next destination?">
+                                        <attributes>
+                                            <color key="NSColor" name="neon_white"/>
+                                            <font key="NSFont" size="34" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-oU-9D4">
@@ -103,6 +110,7 @@
                         <outlet property="flights_btn" destination="6Pp-Ya-hFo" id="2rn-Qw-5Yc"/>
                         <outlet property="homeCollectionView" destination="VcD-KJ-KX6" id="9WQ-py-hV7"/>
                         <outlet property="homeImage" destination="OHK-xo-Jyi" id="627-QT-xNv"/>
+                        <outlet property="homeWelcomeText" destination="hxv-W2-B8k" id="XO2-vw-SBZ"/>
                         <outlet property="home_label" destination="Lok-hz-4ZL" id="I25-it-byP"/>
                         <outlet property="hotels_btn" destination="Wei-E3-OUH" id="zAb-bN-7hb"/>
                         <segue destination="iW1-dm-VRq" kind="presentation" identifier="homeToDetail" modalPresentationStyle="fullScreen" id="HKJ-lA-AaU"/>
@@ -139,10 +147,14 @@
                                 <color key="textColor" name="textDarkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-aO-5Fh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-aO-5Fh">
                                 <rect key="frame" x="16" y="124" width="361" height="728"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VTh-ec-Rtz" id="RSz-u9-m6j"/>
+                                    <outlet property="delegate" destination="VTh-ec-Rtz" id="toT-Hc-BQq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JsS-Ba-Gpb"/>
@@ -151,11 +163,13 @@
                     <navigationItem key="navigationItem" id="Lvl-Zg-YfD"/>
                     <connections>
                         <outlet property="kategoriTitle_lbl" destination="D7w-8a-fZZ" id="on7-ue-0Xf"/>
+                        <outlet property="tableView" destination="dWf-aO-5Fh" id="xpf-zc-Gsg"/>
+                        <segue destination="iW1-dm-VRq" kind="presentation" identifier="listToDetail" modalPresentationStyle="fullScreen" id="BH2-0j-CqO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVf-U8-M9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1054" y="1542"/>
+            <point key="canvasLocation" x="-1054" y="1558"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="zjS-j6-bbV">
@@ -433,7 +447,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HKJ-lA-AaU"/>
+        <segue reference="BH2-0j-CqO"/>
         <segue reference="hzO-HA-6gQ"/>
     </inferredMetricsTieBreakers>
     <resources>

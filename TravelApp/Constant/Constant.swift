@@ -5,4 +5,9 @@
 //  Created by Samet Korkmaz on 18.07.2024.
 //
 
-import Foundation
+import UIKit.UIViewController
+
+
+final class Constant{
+    
+}

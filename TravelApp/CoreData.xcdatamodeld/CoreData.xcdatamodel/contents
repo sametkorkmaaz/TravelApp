@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier=""/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Flight" representedClassName="Flight" syncable="YES" codeGenerationType="class">
+        <attribute name="flightAirport" optional="YES" attributeType="String"/>
+        <attribute name="flightArrivalCity" optional="YES" attributeType="String"/>
+        <attribute name="flightArrivalCountryCode" optional="YES" attributeType="String"/>
+        <attribute name="flightDate" optional="YES" attributeType="String"/>
+        <attribute name="flightDepartureCity" optional="YES" attributeType="String"/>
+        <attribute name="flightPrice" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Hotel" representedClassName="Hotel" syncable="YES" codeGenerationType="class">
+        <attribute name="hotelAddress" optional="YES" attributeType="String"/>
+        <attribute name="hotelCity" optional="YES" attributeType="String"/>
+        <attribute name="hotelCountry" optional="YES" attributeType="String"/>
+        <attribute name="hotelDescription" optional="YES" attributeType="String"/>
+        <attribute name="hotelId" optional="YES" attributeType="String"/>
+        <attribute name="hotelMainPhoto" optional="YES" attributeType="String"/>
+        <attribute name="hotelName" optional="YES" attributeType="String"/>
+        <attribute name="hotelStars" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>

@@ -6,3 +6,15 @@
 //
 
 import Foundation
+// Unsplash API Response Structures
+struct UnsplashResponse: Codable {
+    let results: [UnsplashPhoto]
+}
+
+struct UnsplashPhoto: Codable {
+    let urls: UnsplashPhotoURLs
+}
+
+struct UnsplashPhotoURLs: Codable {
+    let regular: String
+}
