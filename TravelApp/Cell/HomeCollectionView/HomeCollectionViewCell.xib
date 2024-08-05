@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="TravelApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9UY-QZ-4uZ">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-4p-3Yf">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="140"/>
+                                <color key="backgroundColor" red="0.63529413940000001" green="0.63137257099999999" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="FXG-8M-ncv"/>
+                                    <constraint firstAttribute="height" constant="140" id="g2b-ap-95c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOPPING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39h-wp-qzQ">
+                                <rect key="frame" x="10" y="142" width="227" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Tzo-Ab-a27"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" name="blue_text_color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beautiful Alley Scene in Old Town in Europe at Sunset Town in Europe at Sunset" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h2-tt-HQR">
+                                <rect key="frame" x="10" y="166" width="227" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="Ewx-m1-0Hu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="neon_white"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5ci-4p-3Yf" secondAttribute="trailing" id="38P-fe-vNv"/>
+                            <constraint firstItem="39h-wp-qzQ" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" constant="10" id="7DJ-JN-Kjw"/>
+                            <constraint firstItem="39h-wp-qzQ" firstAttribute="top" secondItem="5ci-4p-3Yf" secondAttribute="bottom" constant="2" id="C9b-pp-hyp"/>
+                            <constraint firstItem="5ci-4p-3Yf" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" id="DSq-RO-gKu"/>
+                            <constraint firstItem="8h2-tt-HQR" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" constant="10" id="EFF-KZ-Brr"/>
+                            <constraint firstAttribute="bottom" secondItem="8h2-tt-HQR" secondAttribute="bottom" id="Od3-io-yY2"/>
+                            <constraint firstItem="8h2-tt-HQR" firstAttribute="top" secondItem="39h-wp-qzQ" secondAttribute="bottom" id="Viz-tL-YJb"/>
+                            <constraint firstAttribute="trailing" secondItem="39h-wp-qzQ" secondAttribute="trailing" constant="3" id="X9O-Ob-64a"/>
+                            <constraint firstAttribute="trailing" secondItem="8h2-tt-HQR" secondAttribute="trailing" constant="3" id="ePe-VE-nUJ"/>
+                            <constraint firstItem="5ci-4p-3Yf" firstAttribute="top" secondItem="9UY-QZ-4uZ" secondAttribute="top" id="eXD-eP-8dC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9UY-QZ-4uZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7tt-lc-ab1"/>
+                <constraint firstAttribute="trailing" secondItem="9UY-QZ-4uZ" secondAttribute="trailing" id="MMR-Oa-qHl"/>
+                <constraint firstAttribute="bottom" secondItem="9UY-QZ-4uZ" secondAttribute="bottom" id="ZEH-Tx-SGo"/>
+                <constraint firstItem="9UY-QZ-4uZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="x5Z-b9-fm4"/>
+            </constraints>
+            <size key="customSize" width="27" height="200"/>
+            <connections>
+                <outlet property="HomeCellObj" destination="9UY-QZ-4uZ" id="yuU-w0-j0s"/>
+            </connections>
+            <point key="canvasLocation" x="111.45038167938931" y="70.422535211267615"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="homeImage" width="1779" height="1000"/>
+        <namedColor name="blue_text_color">
+            <color red="0.0" green="0.28235294117647058" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="neon_white">
+            <color red="1" green="1" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
