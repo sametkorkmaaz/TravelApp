@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111CC49C2C620754003E3D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1165DE832C3E67D700FDD934 /* Main.storyboard */; };
 		113634972C5E944B007B807F /* SourceSans3-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113634962C5E944B007B807F /* SourceSans3-Bold.ttf */; };
 		113634992C5E9841007B807F /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113634982C5E9841007B807F /* Montserrat-ExtraLight.ttf */; };
 		1136349B2C5E9886007B807F /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1136349A2C5E9886007B807F /* Montserrat-Light.ttf */; };
@@ -387,6 +388,7 @@
 				113634A32C5E9EF0007B807F /* SourceSansPro-BlackItalic.ttf in Resources */,
 				113634A12C5E9E9C007B807F /* SourceSansPro-Black.ttf in Resources */,
 				113634972C5E944B007B807F /* SourceSans3-Bold.ttf in Resources */,
+				111CC49C2C620754003E3D3E /* Main.storyboard in Resources */,
 				1165DE8A2C3E67D800FDD934 /* Base in Resources */,
 				113634992C5E9841007B807F /* Montserrat-ExtraLight.ttf in Resources */,
 				1136349F2C5E9978007B807F /* Montserrat-Thin.ttf in Resources */,

@@ -18,33 +18,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeImage 1" translatesAutoresizingMaskIntoConstraints="NO" id="OHK-xo-Jyi">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="437"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-Ya-hFo">
-                                <rect key="frame" x="21" y="305" width="80" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="airplane.departure" catalog="system" symbolScale="large"/>
-                                    <color key="baseForegroundColor" name="neon_white"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="VTh-ec-Rtz" kind="presentation" identifier="flightsToList" modalPresentationStyle="fullScreen" id="hzO-HA-6gQ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOP-PICK ARTICLES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-hz-4ZL">
-                                <rect key="frame" x="21" y="453" width="361" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="textColor" name="dark_text_color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VcD-KJ-KX6">
-                                <rect key="frame" x="0.0" y="489" width="393" height="258"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-K4-1mQ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="468.66666666666669"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage 1" translatesAutoresizingMaskIntoConstraints="NO" id="OHK-xo-Jyi">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="468.66666666666669"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-W2-B8k">
+                                        <rect key="frame" x="16" y="207.33333333333334" width="361" height="93.666666666666657"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Where's your next destination?">
+                                                <attributes>
+                                                    <color key="NSColor" name="neon_white"/>
+                                                    <font key="NSFont" size="34" name="TimesNewRomanPSMT"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-Ya-hFo">
+                                        <rect key="frame" x="24.999999999999993" y="316" width="84.333333333333314" height="70.333333333333314"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6Pp-Ya-hFo" secondAttribute="height" multiplier="6:5" id="O6A-5o-8xp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="airplane.departure" catalog="system" symbolScale="large"/>
+                                            <color key="baseForegroundColor" name="neon_white"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="VTh-ec-Rtz" kind="presentation" identifier="flightsToList" modalPresentationStyle="fullScreen" id="hzO-HA-6gQ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-oU-9D4">
+                                        <rect key="frame" x="24.999999999999993" y="393.33333333333331" width="84.333333333333314" height="21.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" name="neon_white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wei-E3-OUH">
+                                        <rect key="frame" x="134.33333333333334" y="316" width="80" height="68"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="house.lodge.fill" catalog="system" symbolScale="large"/>
+                                            <color key="baseForegroundColor" name="neon_white"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="VTh-ec-Rtz" kind="presentation" identifier="hotelsToList" modalPresentationStyle="fullScreen" id="h3I-Ou-ldo"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZr-ma-4uZ">
+                                        <rect key="frame" x="134.33333333333334" y="391" width="80" height="21.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" name="neon_white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hxv-W2-B8k" secondAttribute="trailing" constant="16" id="4PA-CC-BLo"/>
+                                    <constraint firstItem="kmM-oU-9D4" firstAttribute="top" secondItem="6Pp-Ya-hFo" secondAttribute="bottom" constant="7" id="6mc-4S-Ccc"/>
+                                    <constraint firstItem="6Pp-Ya-hFo" firstAttribute="height" secondItem="OHK-xo-Jyi" secondAttribute="height" multiplier="0.15" id="B5c-rY-3QB"/>
+                                    <constraint firstItem="Wei-E3-OUH" firstAttribute="leading" secondItem="6Pp-Ya-hFo" secondAttribute="trailing" constant="25" id="FK7-h3-BSb"/>
+                                    <constraint firstItem="6Pp-Ya-hFo" firstAttribute="leading" secondItem="3zd-K4-1mQ" secondAttribute="leading" constant="25" id="FjV-KZ-HcK"/>
+                                    <constraint firstItem="hxv-W2-B8k" firstAttribute="centerY" secondItem="3zd-K4-1mQ" secondAttribute="centerY" constant="20" id="HvU-VC-lfR"/>
+                                    <constraint firstItem="GZr-ma-4uZ" firstAttribute="top" secondItem="Wei-E3-OUH" secondAttribute="bottom" constant="7" id="KHR-2R-0XX"/>
+                                    <constraint firstItem="GZr-ma-4uZ" firstAttribute="leading" secondItem="Wei-E3-OUH" secondAttribute="leading" id="OsN-ab-LCH"/>
+                                    <constraint firstItem="6Pp-Ya-hFo" firstAttribute="top" secondItem="hxv-W2-B8k" secondAttribute="bottom" constant="15" id="RTj-cS-hJ6"/>
+                                    <constraint firstItem="GZr-ma-4uZ" firstAttribute="trailing" secondItem="Wei-E3-OUH" secondAttribute="trailing" id="SZP-FV-UDc"/>
+                                    <constraint firstItem="hxv-W2-B8k" firstAttribute="leading" secondItem="3zd-K4-1mQ" secondAttribute="leading" constant="16" id="XOO-CP-22j"/>
+                                    <constraint firstItem="kmM-oU-9D4" firstAttribute="leading" secondItem="6Pp-Ya-hFo" secondAttribute="leading" id="XiG-rE-TzM"/>
+                                    <constraint firstAttribute="bottom" secondItem="OHK-xo-Jyi" secondAttribute="bottom" id="Y6L-f3-aY4"/>
+                                    <constraint firstItem="OHK-xo-Jyi" firstAttribute="leading" secondItem="3zd-K4-1mQ" secondAttribute="leading" id="Zco-tp-1ZD"/>
+                                    <constraint firstItem="Wei-E3-OUH" firstAttribute="width" secondItem="6Pp-Ya-hFo" secondAttribute="width" multiplier="0.948617" id="Zk8-cK-Jiu"/>
+                                    <constraint firstItem="Wei-E3-OUH" firstAttribute="height" secondItem="6Pp-Ya-hFo" secondAttribute="height" multiplier="0.966825" id="a5P-wy-epa"/>
+                                    <constraint firstItem="hxv-W2-B8k" firstAttribute="height" secondItem="OHK-xo-Jyi" secondAttribute="height" multiplier="0.2" id="jLP-O0-HPG"/>
+                                    <constraint firstItem="Wei-E3-OUH" firstAttribute="top" secondItem="6Pp-Ya-hFo" secondAttribute="top" id="m9I-so-D1T"/>
+                                    <constraint firstItem="OHK-xo-Jyi" firstAttribute="top" secondItem="3zd-K4-1mQ" secondAttribute="top" id="nMF-cJ-WLx"/>
+                                    <constraint firstItem="kmM-oU-9D4" firstAttribute="trailing" secondItem="6Pp-Ya-hFo" secondAttribute="trailing" id="oxn-v0-fCF"/>
+                                    <constraint firstAttribute="trailing" secondItem="OHK-xo-Jyi" secondAttribute="trailing" id="vOX-Tf-v84"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VcD-KJ-KX6">
+                                <rect key="frame" x="0.0" y="503.66666666666674" width="393" height="265.33333333333326"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ot0-fP-z8h">
                                     <size key="itemSize" width="240" height="240"/>
@@ -58,49 +116,31 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ksW-O0-6oz"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-W2-B8k">
-                                <rect key="frame" x="16" y="198" width="361" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Where's your next destination?">
-                                        <attributes>
-                                            <color key="NSColor" name="neon_white"/>
-                                            <font key="NSFont" size="34" name="TimesNewRomanPSMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-oU-9D4">
-                                <rect key="frame" x="15" y="383" width="92" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" name="neon_white"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wei-E3-OUH">
-                                <rect key="frame" x="122" y="305" width="80" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="house.lodge.fill" catalog="system" symbolScale="large"/>
-                                    <color key="baseForegroundColor" name="neon_white"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="VTh-ec-Rtz" kind="presentation" identifier="hotelsToList" modalPresentationStyle="fullScreen" id="h3I-Ou-ldo"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hotels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZr-ma-4uZ">
-                                <rect key="frame" x="116" y="383" width="92" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" name="neon_white"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP-PICK ARTICLES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-hz-4ZL">
+                                <rect key="frame" x="16" y="468.66666666666669" width="361" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="v4k-P4-qXe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" name="dark_text_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lok-hz-4ZL" firstAttribute="top" secondItem="3zd-K4-1mQ" secondAttribute="bottom" id="PtZ-T1-mvH"/>
+                            <constraint firstItem="VcD-KJ-KX6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WPj-gs-zkf"/>
+                            <constraint firstItem="3zd-K4-1mQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.55" id="XOD-uT-Ke1"/>
+                            <constraint firstItem="VcD-KJ-KX6" firstAttribute="top" secondItem="Lok-hz-4ZL" secondAttribute="bottom" id="XqL-4c-Vhd"/>
+                            <constraint firstItem="3zd-K4-1mQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aKg-Yx-WXK"/>
+                            <constraint firstItem="VcD-KJ-KX6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="axG-4W-G04"/>
+                            <constraint firstItem="Lok-hz-4ZL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b0r-rC-QjR"/>
+                            <constraint firstItem="VcD-KJ-KX6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fP8-XU-OIv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lok-hz-4ZL" secondAttribute="trailing" constant="16" id="jb0-lC-JJW"/>
+                            <constraint firstAttribute="trailing" secondItem="3zd-K4-1mQ" secondAttribute="trailing" id="m4c-Ch-hS6"/>
+                            <constraint firstItem="3zd-K4-1mQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qzl-lB-TFS"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="s0C-k5-cz7">
                         <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
@@ -118,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1054" y="732"/>
+            <point key="canvasLocation" x="-1054.1984732824426" y="731.69014084507046"/>
         </scene>
         <!--ListVC-->
         <scene sceneID="jc9-qd-Y35">
