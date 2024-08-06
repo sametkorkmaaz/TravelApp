@@ -14,7 +14,6 @@ class Tabbar_VC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

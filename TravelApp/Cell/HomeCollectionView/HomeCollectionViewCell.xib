@@ -29,20 +29,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOPPING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39h-wp-qzQ">
-                                <rect key="frame" x="10" y="142" width="227" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="Tzo-Ab-a27"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="140" width="220" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" name="blue_text_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beautiful Alley Scene in Old Town in Europe at Sunset Town in Europe at Sunset" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h2-tt-HQR">
-                                <rect key="frame" x="10" y="166" width="227" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="Ewx-m1-0Hu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Beautiful Alley Scene in Old Town in Europe at Sunset Town in Europe at Sunset" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h2-tt-HQR">
+                                <rect key="frame" x="10" y="158" width="220" height="82"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -52,13 +46,13 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5ci-4p-3Yf" secondAttribute="trailing" id="38P-fe-vNv"/>
                             <constraint firstItem="39h-wp-qzQ" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" constant="10" id="7DJ-JN-Kjw"/>
-                            <constraint firstItem="39h-wp-qzQ" firstAttribute="top" secondItem="5ci-4p-3Yf" secondAttribute="bottom" constant="2" id="C9b-pp-hyp"/>
+                            <constraint firstItem="39h-wp-qzQ" firstAttribute="top" secondItem="5ci-4p-3Yf" secondAttribute="bottom" id="C9b-pp-hyp"/>
                             <constraint firstItem="5ci-4p-3Yf" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" id="DSq-RO-gKu"/>
-                            <constraint firstItem="8h2-tt-HQR" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" constant="10" id="EFF-KZ-Brr"/>
                             <constraint firstAttribute="bottom" secondItem="8h2-tt-HQR" secondAttribute="bottom" id="Od3-io-yY2"/>
+                            <constraint firstItem="8h2-tt-HQR" firstAttribute="leading" secondItem="39h-wp-qzQ" secondAttribute="leading" id="ThQ-xJ-obv"/>
+                            <constraint firstItem="8h2-tt-HQR" firstAttribute="trailing" secondItem="39h-wp-qzQ" secondAttribute="trailing" id="UzS-Sg-i0f"/>
                             <constraint firstItem="8h2-tt-HQR" firstAttribute="top" secondItem="39h-wp-qzQ" secondAttribute="bottom" id="Viz-tL-YJb"/>
-                            <constraint firstAttribute="trailing" secondItem="39h-wp-qzQ" secondAttribute="trailing" constant="3" id="X9O-Ob-64a"/>
-                            <constraint firstAttribute="trailing" secondItem="8h2-tt-HQR" secondAttribute="trailing" constant="3" id="ePe-VE-nUJ"/>
+                            <constraint firstAttribute="trailing" secondItem="39h-wp-qzQ" secondAttribute="trailing" constant="10" id="X9O-Ob-64a"/>
                             <constraint firstItem="5ci-4p-3Yf" firstAttribute="top" secondItem="9UY-QZ-4uZ" secondAttribute="top" id="eXD-eP-8dC"/>
                         </constraints>
                     </view>

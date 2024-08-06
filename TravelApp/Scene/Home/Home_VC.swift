@@ -45,7 +45,6 @@ class Home_VC: UIViewController {
         } else {
             print("Font yüklenemedi.")
         }
-        UIHelper.addShadow(homeImage, renk: .darkGray, opaklik: 0.5, radius: 3.0, offset: CGSize(width: 5, height: 5))
         UIHelper.addShadow(flights_btn, renk: .red, opaklik: 0.8, radius: 10.0, offset: CGSize(width: 5, height: 5))
         UIHelper.addShadow(hotels_btn, renk: .red, opaklik: 0.8, radius: 10.0, offset: CGSize(width: 5, height: 5))
         
@@ -54,8 +53,6 @@ class Home_VC: UIViewController {
         
         UIHelper.addBorder(flights_btn, kalinlik: 1.0, renk: .white)
         UIHelper.addBorder(hotels_btn, kalinlik: 1.0, renk: .white)
-        
-
     }
     
 }
