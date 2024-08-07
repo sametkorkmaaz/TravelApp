@@ -391,6 +391,9 @@
                                         <rect key="frame" x="16" y="97" width="361" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchTextFieldEditingChange:" destination="5E8-4p-egg" eventType="editingChanged" id="W4z-i2-QNy"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where next?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pn-C3-XcD">
                                         <rect key="frame" x="16" y="97" width="361" height="42"/>
@@ -438,11 +441,19 @@
                                     <outlet property="delegate" destination="5E8-4p-egg" id="ZMc-F0-Xqx"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Syr-oD-qpY" customClass="NoDataCustomView" customModule="TravelApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="265.33333333333331" width="361" height="151.33333333333331"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eiy-NP-sBN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FZz-ec-oCU" firstAttribute="height" secondItem="CeK-jv-rol" secondAttribute="height" multiplier="0.18" id="13R-PO-QgV"/>
+                            <constraint firstItem="Syr-oD-qpY" firstAttribute="trailing" secondItem="XWe-JJ-4Hi" secondAttribute="trailing" id="30d-Gn-LC2"/>
                             <constraint firstItem="FZz-ec-oCU" firstAttribute="leading" secondItem="eiy-NP-sBN" secondAttribute="leading" id="6wl-zS-htn"/>
                             <constraint firstItem="BaE-9Q-7qo" firstAttribute="top" secondItem="eiy-NP-sBN" secondAttribute="top" id="9lS-Jf-w51"/>
                             <constraint firstItem="eiy-NP-sBN" firstAttribute="trailing" secondItem="XWe-JJ-4Hi" secondAttribute="trailing" constant="16" id="Bkd-Wk-LZ9"/>
@@ -450,8 +461,11 @@
                             <constraint firstItem="XWe-JJ-4Hi" firstAttribute="top" secondItem="FZz-ec-oCU" secondAttribute="bottom" constant="2" id="LqF-92-DaZ"/>
                             <constraint firstItem="FZz-ec-oCU" firstAttribute="top" secondItem="BaE-9Q-7qo" secondAttribute="bottom" id="NmI-A5-3gQ"/>
                             <constraint firstItem="BaE-9Q-7qo" firstAttribute="height" secondItem="CeK-jv-rol" secondAttribute="height" multiplier="0.06" id="QHj-gr-nVG"/>
+                            <constraint firstItem="Syr-oD-qpY" firstAttribute="leading" secondItem="XWe-JJ-4Hi" secondAttribute="leading" id="YsK-bw-fpo"/>
                             <constraint firstItem="XWe-JJ-4Hi" firstAttribute="bottom" secondItem="eiy-NP-sBN" secondAttribute="bottom" id="Z7V-nZ-3j6"/>
+                            <constraint firstItem="Syr-oD-qpY" firstAttribute="height" secondItem="XWe-JJ-4Hi" secondAttribute="height" multiplier="0.3" id="Zu0-sd-sMJ"/>
                             <constraint firstItem="eiy-NP-sBN" firstAttribute="trailing" secondItem="BaE-9Q-7qo" secondAttribute="trailing" constant="16" id="a40-76-kDB"/>
+                            <constraint firstItem="Syr-oD-qpY" firstAttribute="top" secondItem="XWe-JJ-4Hi" secondAttribute="top" id="fMk-af-ZLX"/>
                             <constraint firstItem="BaE-9Q-7qo" firstAttribute="leading" secondItem="eiy-NP-sBN" secondAttribute="leading" constant="16" id="ngy-kr-Rhy"/>
                             <constraint firstItem="XWe-JJ-4Hi" firstAttribute="leading" secondItem="eiy-NP-sBN" secondAttribute="leading" constant="16" id="sDz-V9-we9"/>
                         </constraints>
@@ -463,6 +477,7 @@
                     <connections>
                         <outlet property="countriesPickerView" destination="FFL-Ar-lmr" id="tAl-ke-lbp"/>
                         <outlet property="flightsToTextField" destination="9pn-C3-XcD" id="BkD-1V-tPM"/>
+                        <outlet property="noDataCustomView" destination="Syr-oD-qpY" id="N6H-Oc-9jU"/>
                         <outlet property="searchPickerView" destination="FFL-Ar-lmr" id="U1c-1z-rkD"/>
                         <outlet property="searchTextField" destination="nht-ev-Yfm" id="aX5-0J-Jyt"/>
                         <outlet property="segmentedControl" destination="h9Y-8l-BR7" id="aqQ-9z-BmN"/>
@@ -556,7 +571,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HKJ-lA-AaU"/>
+        <segue reference="p3Z-Hm-LFv"/>
         <segue reference="hzO-HA-6gQ"/>
     </inferredMetricsTieBreakers>
     <resources>

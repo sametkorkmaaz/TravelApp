@@ -24,8 +24,10 @@ protocol SearchViewModelInterface {
     var onError: ((String) -> Void)? { get set }
     
     func viewDidLoad()
+    func viewDidAppear()
     func clearData()
     func setSegmentCase(_ segment: Int)
+    
     func searchButtonTapped(searchText: String?, flightFromText: String?, flightToText: String?)
     func searchData(countryCode: String, cityName: String)
     func sendMessageGemini()
@@ -38,6 +40,8 @@ protocol SearchViewModelInterface {
     func saveFlightCoreData(selectedIndexFlight: IndexPath)
     func deleteFlightCoreData(by flightDate: String)
     func isFlightBookmarked(flightDate: String?) -> Bool
+    
+    func searchTextFieldChange(countryCode: String, cityName: String)
 }
 
 final class SearchViewModel {
@@ -72,6 +76,9 @@ extension SearchViewModel: SearchViewModelInterface {
         view?.prepareTableView()
         view?.configure()
     }
+    func viewDidAppear() {
+        view?.customViewHidden()
+    }
     
     func setSegmentCase(_ segment: Int) {
         segmentCase = segment
@@ -95,6 +102,9 @@ extension SearchViewModel: SearchViewModelInterface {
             updatePrompt(from: flightFromText, to: flightToText)
             sendMessageGemini()
         }
+    }
+    func searchTextFieldChange(countryCode: String, cityName: String) {
+        searchData(countryCode: countryCode, cityName: cityName)
     }
     
     func sendMessageGemini() {

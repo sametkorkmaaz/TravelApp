@@ -6,6 +6,7 @@ import Alamofire
 protocol SearchViewInterface: AnyObject {
     func prepareTableView()
     func reloadTableView()
+    func customViewHidden()
     func displayError(_ error: String)
     func configure()
 }
@@ -15,6 +16,7 @@ class Search_VC: UIViewController {
     var viewModel: SearchViewModelInterface!
     
     @IBOutlet var segmentedControl: UISegmentView!
+    @IBOutlet weak var noDataCustomView: NoDataCustomView!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -27,11 +29,11 @@ class Search_VC: UIViewController {
         viewModel = SearchViewModel(view: self)
         viewModel.viewDidLoad()
         // -------------------------
-        self.segmentedControl.frame = CGRect(x: self.segmentedControl.frame.minX, y: self.segmentedControl.frame.minY, width: segmentedControl.frame.width, height: 60)
-        segmentedControl.highlightSelectedSegment()
-        configure()
         
         bindViewModel()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.viewDidAppear()
     }
     
     func bindViewModel() {
@@ -42,11 +44,21 @@ class Search_VC: UIViewController {
         }
         viewModel.onError = { [weak self] errorMessage in
             DispatchQueue.main.async {
-                self?.showErrorAlert(message: errorMessage)
+                print("ekrana hata verebilirsin")
+                //self?.showErrorAlert(message: errorMessage)
             }
         }
     }
     
+    @IBAction func searchTextFieldEditingChange(_ sender: Any) {
+        if searchTextField.text!.count >= 3 {
+            let delayTime = DispatchTime.now() + 1.0 // 1 seconds delay
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
+                self.viewModel.searchTextFieldChange(countryCode: self.viewModel.selectedCountry, cityName: self.searchTextField.text!)
+            }
+
+        }
+    }
     @IBAction func SearchSegmentAction(_ sender: UISegmentedControl) {
         viewModel.setSegmentCase(sender.selectedSegmentIndex)
         updateUIForSegment()
@@ -108,7 +120,7 @@ class Search_VC: UIViewController {
             if viewModel.segmentCase == 1 {
                 let selectedFlight = viewModel.flights[indexPath]
                 destinationVC.detailImageUrl = viewModel.cityImageUrls[indexPath]
-                destinationVC.detailTitleText = "Istanbul → " + " \(flightsToTextField.text!)"
+                destinationVC.detailTitleText = "İstanbul → " + " \(flightsToTextField.text!)"
                 destinationVC.detailCategoriText = "Flight"
                 destinationVC.detailText = "\(selectedFlight.airport!)\n\(selectedFlight.date!)\n\(selectedFlight.price!)"
                 
@@ -125,11 +137,11 @@ class Search_VC: UIViewController {
         }
     }
     
-    func showErrorAlert(message: String) {
+   /* func showErrorAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
-    }
+    } */
 }
 
 extension Search_VC: BookmarkButtonDelegate {
@@ -184,9 +196,22 @@ extension Search_VC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.segmentCase == 0 {
-            return viewModel.hotels.count
+            if viewModel.hotels.count == 0 {
+                noDataCustomView.isHidden = false
+                return viewModel.hotels.count
+            } else{
+                noDataCustomView.isHidden = true
+                return viewModel.hotels.count
+            }
+        }else {
+            if viewModel.flights.count == 0 {
+                noDataCustomView.isHidden = false
+                return viewModel.flights.count
+            } else{
+                noDataCustomView.isHidden = true
+                return viewModel.flights.count
+            }
         }
-        return viewModel.flights.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -244,8 +269,10 @@ extension Search_VC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension Search_VC: SearchViewInterface {
-    
     func configure() {
+        self.segmentedControl.frame = CGRect(x: self.segmentedControl.frame.minX, y: self.segmentedControl.frame.minY, width: segmentedControl.frame.width, height: 60)
+        segmentedControl.highlightSelectedSegment()
+        noDataCustomView.isHidden = true
         UIHelper.addBorder(searchTextField, kalinlik: 0.5, renk: .gray)
         UIHelper.roundCorners(searchTextField, radius: 5)
         UIHelper.addBorder(flightsToTextField, kalinlik: 0.5, renk: .gray)
@@ -258,6 +285,9 @@ extension Search_VC: SearchViewInterface {
         tableView.register(nib, forCellReuseIdentifier: "AllTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    func customViewHidden() {
+        noDataCustomView.isHidden = true
     }
     
     func reloadTableView() {

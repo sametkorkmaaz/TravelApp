@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110349552C6400370038BEF4 /* NoDataCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110349542C6400370038BEF4 /* NoDataCustomView.swift */; };
 		111CC49C2C620754003E3D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1165DE832C3E67D700FDD934 /* Main.storyboard */; };
 		113634972C5E944B007B807F /* SourceSans3-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113634962C5E944B007B807F /* SourceSans3-Bold.ttf */; };
 		113634992C5E9841007B807F /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113634982C5E9841007B807F /* Montserrat-ExtraLight.ttf */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110349542C6400370038BEF4 /* NoDataCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataCustomView.swift; sourceTree = "<group>"; };
 		113634962C5E944B007B807F /* SourceSans3-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSans3-Bold.ttf"; sourceTree = "<group>"; };
 		113634982C5E9841007B807F /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		1136349A2C5E9886007B807F /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				1165DE8B2C3E67D800FDD934 /* Info.plist */,
 				117BB9582C411A62005A3AFA /* GenerativeAI-Info.plist */,
 				11A1739F2C51734C00AE7CF5 /* CoreData.xcdatamodeld */,
+				110349542C6400370038BEF4 /* NoDataCustomView.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				114AD3872C49B25B0036F32B /* WebService.swift in Sources */,
 				1165DE972C3E6E6300FDD934 /* Search_VC.swift in Sources */,
 				11719B512C4C7043001EBFC0 /* SearchViewModel.swift in Sources */,
+				110349552C6400370038BEF4 /* NoDataCustomView.swift in Sources */,
 				1165DE992C3E6E7700FDD934 /* Bookmarks_VC.swift in Sources */,
 				114AD3852C49AA8C0036F32B /* ServiceManager.swift in Sources */,
 				11A1739C2C51358900AE7CF5 /* UnsplashResponse.swift in Sources */,
