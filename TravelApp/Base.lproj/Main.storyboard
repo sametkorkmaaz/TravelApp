@@ -168,8 +168,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdO-Be-Nwn">
                                 <rect key="frame" x="16" y="0.0" width="62" height="57"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="62" id="adc-zf-iEE"/>
-                                    <constraint firstAttribute="height" constant="57" id="ygo-El-abj"/>
+                                    <constraint firstAttribute="width" secondItem="HdO-Be-Nwn" secondAttribute="height" multiplier="62:57" id="ALd-K1-4Lo"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -181,11 +180,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7w-8a-fZZ">
-                                <rect key="frame" x="86" y="0.0" width="291" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="291" id="n4Z-Be-gVx"/>
-                                    <constraint firstAttribute="height" constant="57" id="pdN-hk-Koc"/>
-                                </constraints>
+                                <rect key="frame" x="86" y="0.0" width="119" height="57"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" name="textDarkColor"/>
                                 <nil key="highlightedColor"/>
@@ -202,8 +197,11 @@
                         <viewLayoutGuide key="safeArea" id="JsS-Ba-Gpb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="D7w-8a-fZZ" firstAttribute="height" secondItem="A1u-b4-n8G" secondAttribute="height" multiplier="0.0669014" id="2q6-h4-vyU"/>
+                            <constraint firstItem="HdO-Be-Nwn" firstAttribute="width" secondItem="A1u-b4-n8G" secondAttribute="width" multiplier="0.157761" id="6lt-cp-jt4"/>
                             <constraint firstItem="dWf-aO-5Fh" firstAttribute="top" secondItem="HdO-Be-Nwn" secondAttribute="bottom" constant="8" symbolic="YES" id="Cke-DT-dd6"/>
                             <constraint firstItem="JsS-Ba-Gpb" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D7w-8a-fZZ" secondAttribute="trailing" constant="16" id="GWI-LE-AVn"/>
+                            <constraint firstItem="HdO-Be-Nwn" firstAttribute="height" secondItem="D7w-8a-fZZ" secondAttribute="height" id="Md0-hf-lB5"/>
                             <constraint firstItem="D7w-8a-fZZ" firstAttribute="leading" secondItem="HdO-Be-Nwn" secondAttribute="trailing" constant="8" symbolic="YES" id="RLU-yI-I1L"/>
                             <constraint firstItem="D7w-8a-fZZ" firstAttribute="top" secondItem="JsS-Ba-Gpb" secondAttribute="top" id="SLe-SQ-5rW"/>
                             <constraint firstItem="HdO-Be-Nwn" firstAttribute="top" secondItem="JsS-Ba-Gpb" secondAttribute="top" id="XrP-M4-gPK"/>
@@ -571,7 +569,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p3Z-Hm-LFv"/>
+        <segue reference="BH2-0j-CqO"/>
         <segue reference="hzO-HA-6gQ"/>
     </inferredMetricsTieBreakers>
     <resources>
