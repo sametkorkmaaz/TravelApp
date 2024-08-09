@@ -74,6 +74,7 @@ extension Detail_VC: DetailViewInterface{
         UIHelper.roundCorners(detailImageView, radius: 25)
         UIHelper.roundCorners(detailBackButton, radius: 10)
         UIHelper.addShadow(detailBackButton, renk: .gray, opaklik: 5, radius: 5, offset: CGSize(width: 5, height: 5))
+        UIHelper.roundCorners(detailBookmarkButton, radius: 10)
         
         if detailImageUrl.range(of: "bstatic") != nil || detailImageUrl == ""{
             detailImageView.image = UIImage(named: "splash")

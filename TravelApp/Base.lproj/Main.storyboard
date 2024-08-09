@@ -236,10 +236,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage" translatesAutoresizingMaskIntoConstraints="NO" id="gUn-Jq-tRR">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="380"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="380" id="6qZ-gB-3FN"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="383.33333333333331"/>
                             </imageView>
                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRW-st-rE9">
                                 <rect key="frame" x="16" y="10" width="61" height="55"/>
@@ -258,7 +255,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORIES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF2-zG-KW3">
-                                <rect key="frame" x="16" y="388" width="181" height="21"/>
+                                <rect key="frame" x="16" y="391.33333333333331" width="181" height="21"/>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="U3w-g9-Jzj"/>
@@ -282,18 +279,15 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-kI-e9Q">
-                                <rect key="frame" x="16" y="481" width="361" height="302"/>
+                                <rect key="frame" x="16" y="484.66666666666674" width="361" height="298.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="302" id="S1x-qD-qcp"/>
-                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" name="dark_text_color"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️⭐️⭐️" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwL-Xq-hHI">
-                                <rect key="frame" x="205" y="388" width="172" height="21"/>
+                                <rect key="frame" x="205" y="391.33333333333331" width="172" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="g8l-Cu-xfS"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="172" id="yyW-kf-ntI"/>
@@ -303,7 +297,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDn-7n-8i9">
-                                <rect key="frame" x="16" y="409" width="361" height="62"/>
+                                <rect key="frame" x="16" y="412.33333333333331" width="361" height="62.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -325,6 +319,7 @@
                             <constraint firstItem="es9-mO-xPS" firstAttribute="top" secondItem="xwk-kI-e9Q" secondAttribute="bottom" constant="8" id="OoI-WT-Kqv"/>
                             <constraint firstItem="liu-uO-ZI7" firstAttribute="trailing" secondItem="es9-mO-xPS" secondAttribute="trailing" constant="16" id="PIP-O4-lHG"/>
                             <constraint firstItem="NRW-st-rE9" firstAttribute="leading" secondItem="liu-uO-ZI7" secondAttribute="leading" constant="16" id="Qp6-8e-hyp"/>
+                            <constraint firstItem="xwk-kI-e9Q" firstAttribute="height" secondItem="qcE-f1-kgr" secondAttribute="height" multiplier="0.35" id="SUh-kp-SAO"/>
                             <constraint firstItem="xwk-kI-e9Q" firstAttribute="top" secondItem="uDn-7n-8i9" secondAttribute="bottom" constant="10" id="Snw-Gq-Txc"/>
                             <constraint firstItem="liu-uO-ZI7" firstAttribute="trailing" secondItem="uDn-7n-8i9" secondAttribute="trailing" constant="16" id="Xey-Tg-7DY"/>
                             <constraint firstItem="uDn-7n-8i9" firstAttribute="leading" secondItem="liu-uO-ZI7" secondAttribute="leading" constant="16" id="auG-RW-aPC"/>
@@ -333,6 +328,7 @@
                             <constraint firstItem="gUn-Jq-tRR" firstAttribute="leading" secondItem="liu-uO-ZI7" secondAttribute="leading" id="pAn-Lu-c5e"/>
                             <constraint firstItem="liu-uO-ZI7" firstAttribute="trailing" secondItem="xwk-kI-e9Q" secondAttribute="trailing" constant="16" id="pO2-gd-xvB"/>
                             <constraint firstItem="gUn-Jq-tRR" firstAttribute="top" secondItem="qcE-f1-kgr" secondAttribute="top" id="q2l-jM-4Ce"/>
+                            <constraint firstItem="gUn-Jq-tRR" firstAttribute="height" secondItem="qcE-f1-kgr" secondAttribute="height" multiplier="0.45" id="uDl-vY-iGJ"/>
                             <constraint firstItem="NRW-st-rE9" firstAttribute="top" secondItem="liu-uO-ZI7" secondAttribute="top" constant="10" id="wxD-CT-vi5"/>
                             <constraint firstItem="liu-uO-ZI7" firstAttribute="trailing" secondItem="jwL-Xq-hHI" secondAttribute="trailing" constant="16" id="xEX-tP-20u"/>
                         </constraints>
@@ -555,7 +551,7 @@
                         <color key="tintColor" name="dark_text_color"/>
                         <color key="barTintColor" name="pick_color"/>
                         <color key="selectedImageTintColor" name="kemik_beyaz"/>
-                        <tabBarAppearance key="standardAppearance" backgroundEffect="regular" backgroundImageContentMode="center">
+                        <tabBarAppearance key="standardAppearance" backgroundEffect="regular" backgroundImageContentMode="center" stackedItemPositioning="automatic">
                             <color key="backgroundColor" name="pick_color"/>
                             <color key="shadowColor" name="pick_color"/>
                             <color key="selectionIndicatorTintColor" name="pick_color"/>

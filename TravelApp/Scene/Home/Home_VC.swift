@@ -7,19 +7,25 @@
 
 import UIKit
 
+protocol HomeViewInterface: AnyObject {
+    func configureHome()
+    func configureHomeCollectionView()
+}
 class Home_VC: UIViewController {
 
+    var viewModel: HomeViewModelInterface!
+    
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var flights_btn: UIButton!
     @IBOutlet weak var hotels_btn: UIButton!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var home_label: UILabel!
     @IBOutlet weak var homeWelcomeText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureHome()
-        homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
-    
+        viewModel = HomeViewModel(view: self)
+        viewModel.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +45,32 @@ class Home_VC: UIViewController {
         }
     }
 
+    
+}
+// MARK: - Home UICollectionView
+extension Home_VC : UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        cell.collectionViewDescriptionText.text = ""
+        cell.collectionViewCategoriText.text = "denem"
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "homeToDetail", sender: nil)
+    }
+}
+
+
+
+
+extension Home_VC: HomeViewInterface{
+    
     func configureHome(){
         if let customFont = UIFont(name: "SourceSansPro-Black", size: 32.0) {
             homeWelcomeText.font = customFont
@@ -55,20 +87,7 @@ class Home_VC: UIViewController {
         UIHelper.addBorder(hotels_btn, kalinlik: 1.0, renk: .white)
     }
     
-}
-// MARK: - Home UICollectionView
-extension Home_VC : UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "homeToDetail", sender: nil)
+    func configureHomeCollectionView() {
+        homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
     }
 }

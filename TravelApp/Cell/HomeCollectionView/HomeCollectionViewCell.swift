@@ -10,8 +10,10 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var HomeCellObj: UIView!
+    @IBOutlet weak var collectionViewImage: UIImageView!
     @IBOutlet weak var collectionViewDescriptionText: UILabel!
     @IBOutlet weak var collectionViewCategoriText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

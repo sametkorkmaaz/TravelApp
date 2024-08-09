@@ -37,7 +37,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="bhQ-et-vTK"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                         <color key="textColor" name="kemik_beyaz"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,7 +46,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="gr2-qD-bPB"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" name="neon_white"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -62,7 +62,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="zPH-Fu-H9F"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>

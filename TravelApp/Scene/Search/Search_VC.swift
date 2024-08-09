@@ -28,8 +28,7 @@ class Search_VC: UIViewController {
         super.viewDidLoad()
         viewModel = SearchViewModel(view: self)
         viewModel.viewDidLoad()
-        // -------------------------
-        
+        viewModel.searchData(countryCode: "AR", cityName: "")
         bindViewModel()
     }
     override func viewDidAppear(_ animated: Bool) {
