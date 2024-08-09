@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-K4-1mQ">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="468.66666666666669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="519"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage 1" translatesAutoresizingMaskIntoConstraints="NO" id="OHK-xo-Jyi">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="468.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="519"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-W2-B8k">
-                                        <rect key="frame" x="16" y="195.66666666666666" width="361" height="117.33333333333334"/>
+                                        <rect key="frame" x="16" y="214.66666666666669" width="361" height="129.66666666666669"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Where's your next destination?">
                                                 <attributes>
@@ -38,7 +38,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-Ya-hFo">
-                                        <rect key="frame" x="24.999999999999993" y="328" width="84.333333333333314" height="70"/>
+                                        <rect key="frame" x="24.999999999999993" y="359.33333333333331" width="93.333333333333314" height="78"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6Pp-Ya-hFo" secondAttribute="height" multiplier="6:5" id="O6A-5o-8xp"/>
                                         </constraints>
@@ -52,13 +52,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-oU-9D4">
-                                        <rect key="frame" x="24.999999999999993" y="405" width="84.333333333333314" height="21.666666666666686"/>
+                                        <rect key="frame" x="24.999999999999993" y="444.33333333333331" width="93.333333333333314" height="21.666666666666686"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" name="neon_white"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wei-E3-OUH">
-                                        <rect key="frame" x="134.33333333333334" y="328" width="80" height="68"/>
+                                        <rect key="frame" x="143.33333333333334" y="359.33333333333331" width="88.666666666666657" height="75.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="house.lodge.fill" catalog="system" symbolScale="large"/>
@@ -69,7 +69,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZr-ma-4uZ">
-                                        <rect key="frame" x="134.33333333333334" y="403" width="80" height="21.666666666666686"/>
+                                        <rect key="frame" x="143.33333333333334" y="441.66666666666669" width="88.666666666666657" height="21.666666666666686"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" name="neon_white"/>
                                         <nil key="highlightedColor"/>
@@ -101,9 +101,12 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VcD-KJ-KX6">
-                                <rect key="frame" x="0.0" y="506.66666666666674" width="393" height="262.33333333333326"/>
+                                <rect key="frame" x="0.0" y="559" width="393" height="210"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="dqw-3w-DYZ"/>
+                                </constraints>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ot0-fP-z8h">
                                     <size key="itemSize" width="240" height="240"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -117,7 +120,10 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP-PICK ARTICLES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lok-hz-4ZL">
-                                <rect key="frame" x="16" y="488.66666666666669" width="361" height="18"/>
+                                <rect key="frame" x="16" y="539" width="361" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="nxL-dO-XHd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" name="dark_text_color"/>
                                 <nil key="highlightedColor"/>
@@ -126,9 +132,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lok-hz-4ZL" firstAttribute="top" secondItem="3zd-K4-1mQ" secondAttribute="bottom" constant="20" id="PtZ-T1-mvH"/>
-                            <constraint firstItem="3zd-K4-1mQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.55" id="XOD-uT-Ke1"/>
-                            <constraint firstItem="VcD-KJ-KX6" firstAttribute="top" secondItem="Lok-hz-4ZL" secondAttribute="bottom" id="XqL-4c-Vhd"/>
+                            <constraint firstItem="Lok-hz-4ZL" firstAttribute="top" secondItem="3zd-K4-1mQ" secondAttribute="bottom" constant="20" id="53b-ia-elH"/>
+                            <constraint firstItem="VcD-KJ-KX6" firstAttribute="top" secondItem="Lok-hz-4ZL" secondAttribute="bottom" constant="5" id="XqL-4c-Vhd"/>
                             <constraint firstItem="3zd-K4-1mQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aKg-Yx-WXK"/>
                             <constraint firstItem="VcD-KJ-KX6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="axG-4W-G04"/>
                             <constraint firstItem="Lok-hz-4ZL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b0r-rC-QjR"/>
@@ -166,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdO-Be-Nwn">
-                                <rect key="frame" x="16" y="0.0" width="62" height="57"/>
+                                <rect key="frame" x="16.000000000000004" y="0.0" width="49.333333333333343" height="45.333333333333336"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HdO-Be-Nwn" secondAttribute="height" multiplier="62:57" id="ALd-K1-4Lo"/>
                                 </constraints>
@@ -180,13 +185,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7w-8a-fZZ">
-                                <rect key="frame" x="86" y="0.0" width="119" height="57"/>
+                                <rect key="frame" x="73.333333333333314" y="0.0" width="119" height="45.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" name="textDarkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-aO-5Fh">
-                                <rect key="frame" x="16" y="65" width="361" height="787"/>
+                                <rect key="frame" x="16" y="53.333333333333314" width="361" height="624.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="VTh-ec-Rtz" id="RSz-u9-m6j"/>
@@ -569,7 +574,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BH2-0j-CqO"/>
+        <segue reference="HKJ-lA-AaU"/>
         <segue reference="hzO-HA-6gQ"/>
     </inferredMetricsTieBreakers>
     <resources>
