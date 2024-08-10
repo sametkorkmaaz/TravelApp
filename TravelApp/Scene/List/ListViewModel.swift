@@ -8,6 +8,9 @@
 import Foundation
 import CoreData
 import UIKit
+import GoogleGenerativeAI
+import Alamofire
+
 protocol ListViewModelInterface{
     var view: ListViewInterface? { get set }
     var kategoriTitle: String { get set }
@@ -20,12 +23,17 @@ protocol ListViewModelInterface{
     
     func viewDidLoad()
     func fetchData(kategori: String)
+    // Hotel fetch metods
     func searchHotelData(countryCode: String, cityName: String)
-    
+    // Flight fetch metods
+    func sendMessageGemini()
+    func sendMessageCityImage(cityName: String)
+    func updatePrompt(from: String?)
+    // Hotel CoreData and bookmark button
     func saveHotelCoreData(selectedIndexHotel: IndexPath)
     func deleteHotelCoreData(by hotelId: String)
     func isHotelBookmarked(hotelId: String?) -> Bool
-    
+    // Flight CoreData and bookmark button
     func saveFlightCoreData(selectedIndexFlight: IndexPath)
     func deleteFlightCoreData(by flightDate: String)
     func isFlightBookmarked(flightDate: String?) -> Bool
@@ -33,11 +41,13 @@ protocol ListViewModelInterface{
 
 final class ListViewModel{
     weak var view: ListViewInterface?
+    let model = GenerativeModel(name: "gemini-1.5-flash", apiKey: APIKey.default)
     var kategoriTitle: String = "?"
     var hotels: [Datum] = []
     var flights: [FlightModel] = []
     var selectedIndexPath: Int?
     var cityImageUrls: [String] = []
+    var prompt = ""
     
     let countriesList = ["AR", "AU", "BR", "CA", "CN", "DE", "EG", "ES", "FR", "GB", "IN", "IT", "JP", "KR", "MX", "NG", "RU", "TR", "US", "ZA"]
 
@@ -68,9 +78,17 @@ extension ListViewModel: ListViewModelInterface{
                     self.searchHotelData(countryCode: code, cityName: "")
                 }
             }
-        } else {
+        } 
+        if kategori == "Flights" {
+            updatePrompt(from: "İstanbul")
+            sendMessageGemini()
+            sendMessageCityImage(cityName: "İstanbul")
             // flight veri çek
-            flights.append(FlightModel(departureCity: "uçak", arrivalCity: "", airport: "", price: "", date: "", arrivalCountryCode: ""))
+        /*   DispatchQueue.main.async{
+                self.updatePrompt(from: "İstanbul")
+                self.sendMessageGemini()
+                self.sendMessageCityImage(cityName: "İstanbul")
+            }*/
         }
     }
     
@@ -163,6 +181,61 @@ extension ListViewModel: ListViewModelInterface{
         }
     }
     
+    func sendMessageGemini() {
+        print("çlaıştı gemini")
+        Task {
+            do {
+                let response = try await model.generateContent(prompt)
+                guard let text = response.text else {
+                    self.onError?("No response text")
+                    return
+                }
+                if let data = text.data(using: .utf8) {
+                    let decoder = JSONDecoder()
+                    do {
+                        let flightArray = try decoder.decode([FlightModel].self, from: data)
+                        self.flights = flightArray
+                        print(flights)
+                        self.onDataUpdated?()
+                    } catch {
+                        self.onError?("JSON decode error: \(error)")
+                    }
+                } else {
+                    self.onError?("Data conversion error")
+                }
+            } catch {
+                self.onError?("Error: \(error)")
+            }
+        }
+    }
+    
+    func sendMessageCityImage(cityName: String) {
+        print("çlaıştı city")
+        let apiKey = "zbUOr9jsbwxAE-DrrsaBiL-wMzijqZSQxueoyLDAEe0"
+        let urlString = "https://api.unsplash.com/search/photos?page=1&query=\(cityName)&client_id=\(apiKey)"
+        
+        AF.request(urlString, method: .get)
+            .validate()
+            .responseDecodable(of: UnsplashResponse.self) { [weak self] response in
+                switch response.result {
+                case .success(let unsplashResponse):
+                    self?.cityImageUrls = unsplashResponse.results.map { $0.urls.regular }
+                    self?.onDataUpdated?()
+                case .failure(let error):
+                    self?.onError?("Request failed with error: \(error)")
+                }
+            }
+    }
+    func updatePrompt(from: String?) {
+        print("çlaıştı promt")
+        prompt = """
+         Sana vereceğim kalkış şehir ile rastgele şehirler arasında 20.09.2024 ve sonrasında giden güncel 10 adet uçak bileti bilgisini JSON verisi olarak ver. Gidilen şehirler rastgele ülkelerden de olabilir. Aynı ülke içinde farklı şehirler de olabilir. \
+        Kalkış şehri:\(from ?? "")\
+        JSON formatında: Kalkış şehri, İniş şehri, İniş şehrinin ülke kodu, Kalkış şehrindeki havaalanı bilgisi, Fiyat bilgisi, Tarih ve saat olsun. \
+        BU verileri ingilizce tanımlamaları ile ver. Dönüş olarak sadece JSON formatında dönüş yaz. Başka hiçbir şey yazma. \
+        Dönüş [ ile başlasın ve ] ile bitsin. Verileri vereceğim bu swift veri modeline uygun ver-> struct FlightModel: Codable { let departureCity: String? let arrivalCity: String? let airport: String? let price: String? let date: String? let arrivalCountryCode: String?
+        """
+    }
     func saveFlightCoreData(selectedIndexFlight: IndexPath) {
         let selectedFlight = flights[selectedIndexFlight.row]
         

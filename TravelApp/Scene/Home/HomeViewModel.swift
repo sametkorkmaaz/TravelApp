@@ -13,6 +13,7 @@ protocol HomeViewModelInterface {
     func viewDidLoad()
     func prepareHomeCollectionView()
 }
+
 final class HomeViewModel {
     weak var view: HomeViewInterface?
     

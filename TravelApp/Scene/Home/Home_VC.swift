@@ -56,7 +56,7 @@ extension Home_VC : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        cell.collectionViewDescriptionText.text = ""
+        cell.collectionViewDescriptionText.text = "hbsfkjdasbdkjsabdkasbdjhasbdjhasbdjhasbdjhasbdjabsjdas"
         cell.collectionViewCategoriText.text = "denem"
         return cell
     }

@@ -25,8 +25,22 @@ final class List_VC: UIViewController {
         viewModel.view = self
         viewModel.viewDidLoad()
         // Do any additional setup after loading the view.
+        bindViewModel()
     }
-    
+    func bindViewModel() {
+        viewModel.onDataUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        viewModel.onError = { [weak self] errorMessage in
+            DispatchQueue.main.async {
+                print("ekrana hata")
+                self!.viewModel.fetchData(kategori: self!.viewModel.kategoriTitle)
+                //self?.showErrorAlert(message: errorMessage)
+            }
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "listToDetail",
            let destinationVC = segue.destination as? Detail_VC,
@@ -51,7 +65,7 @@ final class List_VC: UIViewController {
                 
 
             }
-            if viewModel.kategoriTitle == "Flight" {
+            if viewModel.kategoriTitle == "Flights" {
                 let selectedFlight = viewModel.flights[indexPath]
                 destinationVC.detailImageUrl = viewModel.cityImageUrls[indexPath]
                 destinationVC.detailTitleText = "Istanbul → " + " \(selectedFlight.arrivalCity!)"
@@ -155,12 +169,22 @@ extension List_VC: UITableViewDataSource, UITableViewDelegate{
             cell.isBookmarkFilled = isBookmarked
             let bookmarkImage = isBookmarked ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
             cell.cellBookmarkButton.setImage(bookmarkImage, for: .normal)
-        } else{
-            // LİST FLİGHT TABLEVİEW
-            cell.textLabel?.text = viewModel.flights[0].departureCity
         }
-        
-        
+        if viewModel.kategoriTitle == "Flights"{
+            // LİST FLİGHT TABLEVİEW
+            let flight = viewModel.flights[indexPath.row]
+            cell.cellTitle.text = "\(flight.departureCity!) → \(flight.arrivalCity!)"
+            cell.cellDescription.text = "\(flight.airport!)\n " + "\(flight.date!)"
+            cell.hotelStarCount.text = flight.price
+            if viewModel.flights.count <= viewModel.cityImageUrls.count {
+                cell.cellImage.kf.setImage(with: URL(string: viewModel.cityImageUrls[indexPath.row]))
+            } else {
+                cell.cellImage.kf.setImage(with: URL(string: viewModel.cityImageUrls.randomElement()!))
+            }
+
+            cell.cellCountryFlag.kf.setImage(with: URL(string: "https://flagsapi.com/\(flight.arrivalCountryCode!)/flat/64.png")!)
+            cell.cellCategory.text = "Flight"
+        }
         return cell
     }
     

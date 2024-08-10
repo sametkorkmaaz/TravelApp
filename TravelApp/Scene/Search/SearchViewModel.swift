@@ -27,8 +27,8 @@ protocol SearchViewModelInterface {
     func viewDidAppear()
     func clearData()
     func setSegmentCase(_ segment: Int)
-    
     func searchButtonTapped(searchText: String?, flightFromText: String?, flightToText: String?)
+    
     func searchData(countryCode: String, cityName: String)
     func sendMessageGemini()
     func sendMessageCityImage(cityName: String)
