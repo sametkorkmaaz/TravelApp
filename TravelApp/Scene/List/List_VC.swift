@@ -36,7 +36,9 @@ final class List_VC: UIViewController {
         viewModel.onError = { [weak self] errorMessage in
             DispatchQueue.main.async {
                 print("ekrana hata")
-                self!.viewModel.fetchData(kategori: self!.viewModel.kategoriTitle)
+                if self!.viewModel.kategoriTitle == "Flights"{
+                    self!.viewModel.fetchData(kategori: self!.viewModel.kategoriTitle)
+                }
                 //self?.showErrorAlert(message: errorMessage)
             }
         }
