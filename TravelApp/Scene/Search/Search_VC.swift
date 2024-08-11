@@ -43,8 +43,7 @@ class Search_VC: UIViewController {
         }
         viewModel.onError = { [weak self] errorMessage in
             DispatchQueue.main.async {
-                print("ekrana hata verebilirsin")
-                //self?.showErrorAlert(message: errorMessage)
+                self?.showErrorAlert(message: errorMessage)
             }
         }
     }
@@ -136,11 +135,12 @@ class Search_VC: UIViewController {
         }
     }
     
-   /* func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showErrorAlert(message: String) {
+        /*let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    } */
+        present(alert, animated: true, completion: nil)*/
+        print("ekrana hata ver")
+    }
 }
 
 extension Search_VC: BookmarkButtonDelegate {
