@@ -75,6 +75,7 @@ extension SearchViewModel: SearchViewModelInterface {
     func viewDidLoad() {
         view?.prepareTableView()
         view?.configure()
+        view?.setupActivityIndicator()
     }
     func viewDidAppear() {
         view?.customViewHidden()
@@ -98,6 +99,8 @@ extension SearchViewModel: SearchViewModelInterface {
         if segmentCase == 0 {
             searchData(countryCode: selectedCountry, cityName: searchText ?? "")
         } else if segmentCase == 1 {
+            view?.customViewHidden()
+            view?.startActivityIndicator()
             sendMessageCityImage(cityName: flightToText ?? "")
             updatePrompt(from: flightFromText, to: flightToText)
             sendMessageGemini()
@@ -120,6 +123,7 @@ extension SearchViewModel: SearchViewModelInterface {
                     do {
                         let flightArray = try decoder.decode([FlightModel].self, from: data)
                         self.flights = flightArray
+                        view?.stopActivityIndicator()
                         self.onDataUpdated?()
                     } catch {
                         self.onError?("JSON decode error: \(error)")

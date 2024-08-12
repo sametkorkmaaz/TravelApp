@@ -9,11 +9,15 @@ protocol SearchViewInterface: AnyObject {
     func customViewHidden()
     func displayError(_ error: String)
     func configure()
+    func setupActivityIndicator()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 class Search_VC: UIViewController {
-
     var viewModel: SearchViewModelInterface!
+    
+    var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 100 ,y: 200, width: 80, height: 80)) as UIActivityIndicatorView
     
     @IBOutlet var segmentedControl: UISegmentView!
     @IBOutlet weak var noDataCustomView: NoDataCustomView!
@@ -288,7 +292,27 @@ extension Search_VC: SearchViewInterface {
     func customViewHidden() {
         noDataCustomView.isHidden = true
     }
+    func setupActivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .pick
+        activityIndicator.style = UIActivityIndicatorView.Style.large
+        activityIndicator.backgroundColor = (UIColor (white: 0.8, alpha: 0.8))
+        activityIndicator.layer.cornerRadius = 10
+        self.view.addSubview(activityIndicator)
+        }
+    func startActivityIndicator() {
+        print("start")
+        activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+    }
     
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+        }
+    }
     func reloadTableView() {
         tableView.reloadData()
     }

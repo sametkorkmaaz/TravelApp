@@ -23,7 +23,6 @@
 		1157EDED2C481627004AB876 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1157EDEC2C481627004AB876 /* Kingfisher */; };
 		1165DE7E2C3E67D700FDD934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165DE7D2C3E67D700FDD934 /* AppDelegate.swift */; };
 		1165DE802C3E67D700FDD934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165DE7F2C3E67D700FDD934 /* SceneDelegate.swift */; };
-		1165DE852C3E67D700FDD934 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1165DE842C3E67D700FDD934 /* Base */; };
 		1165DE872C3E67D800FDD934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1165DE862C3E67D800FDD934 /* Assets.xcassets */; };
 		1165DE8A2C3E67D800FDD934 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1165DE892C3E67D800FDD934 /* Base */; };
 		1165DE922C3E6DC300FDD934 /* Tabbar_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165DE912C3E6DC300FDD934 /* Tabbar_VC.swift */; };
@@ -397,7 +396,6 @@
 				1165DE8A2C3E67D800FDD934 /* Base in Resources */,
 				113634992C5E9841007B807F /* Montserrat-ExtraLight.ttf in Resources */,
 				1136349F2C5E9978007B807F /* Montserrat-Thin.ttf in Resources */,
-				1165DE852C3E67D700FDD934 /* Base in Resources */,
 				1136349D2C5E98D1007B807F /* Montserrat-Regular.ttf in Resources */,
 				11719B642C4C7178001EBFC0 /* AllTableViewCell.xib in Resources */,
 			);

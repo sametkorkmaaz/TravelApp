@@ -65,6 +65,8 @@ extension ListViewModel: ListViewModelInterface{
     func viewDidLoad() {
         view?.configurePage()
         view?.prepareTableView()
+        view?.setupActivityIndicator()
+        view?.startActivityIndicator()
         fetchData(kategori: kategoriTitle)
     }
     
@@ -80,15 +82,10 @@ extension ListViewModel: ListViewModelInterface{
             }
         } 
         if kategori == "Flights" {
+            view?.startActivityIndicator()
             updatePrompt(from: "İstanbul")
             sendMessageGemini()
             sendMessageCityImage(cityName: "İstanbul")
-            // flight veri çek
-        /*   DispatchQueue.main.async{
-                self.updatePrompt(from: "İstanbul")
-                self.sendMessageGemini()
-                self.sendMessageCityImage(cityName: "İstanbul")
-            }*/
         }
     }
     
@@ -99,6 +96,7 @@ extension ListViewModel: ListViewModelInterface{
             if let newHotels = response.data {
                 self.hotels.append(contentsOf: newHotels)
             }
+            view?.stopActivityIndicator()
             self.onDataUpdated?()
             self.view?.reloadTableView()
         }, onError: { [weak self] error in
@@ -183,6 +181,7 @@ extension ListViewModel: ListViewModelInterface{
     
     func sendMessageGemini() {
         print("çlaıştı gemini")
+        view?.startActivityIndicator()
         Task {
             do {
                 let response = try await model.generateContent(prompt)
@@ -195,7 +194,8 @@ extension ListViewModel: ListViewModelInterface{
                     do {
                         let flightArray = try decoder.decode([FlightModel].self, from: data)
                         self.flights = flightArray
-                        print(flights)
+                        print("stop")
+                        view?.stopActivityIndicator()
                         self.onDataUpdated?()
                     } catch {
                         self.onError?("JSON decode error: \(error)")
@@ -211,6 +211,7 @@ extension ListViewModel: ListViewModelInterface{
     
     func sendMessageCityImage(cityName: String) {
         print("çlaıştı city")
+        view?.startActivityIndicator()
         let apiKey = "zbUOr9jsbwxAE-DrrsaBiL-wMzijqZSQxueoyLDAEe0"
         let urlString = "https://api.unsplash.com/search/photos?page=1&query=\(cityName)&client_id=\(apiKey)"
         
@@ -228,6 +229,7 @@ extension ListViewModel: ListViewModelInterface{
     }
     func updatePrompt(from: String?) {
         print("çlaıştı promt")
+        view?.startActivityIndicator()
         prompt = """
          Sana vereceğim kalkış şehir ile rastgele şehirler arasında 20.09.2024 ve sonrasında giden güncel 10 adet uçak bileti bilgisini JSON verisi olarak ver. Gidilen şehirler rastgele ülkelerden de olabilir. Aynı ülke içinde farklı şehirler de olabilir. \
         Kalkış şehri:\(from ?? "")\

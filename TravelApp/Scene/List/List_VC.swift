@@ -12,10 +12,15 @@ protocol ListViewInterface: AnyObject{
     func configurePage()
     func reloadTableView()
     func prepareTableView()
+    func setupActivityIndicator()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 final class List_VC: UIViewController {
     var viewModel: ListViewModel!
+    
+    var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 100 ,y: 200, width: 80, height: 80)) as UIActivityIndicatorView
     
     @IBOutlet weak var kategoriTitle_lbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -36,8 +41,8 @@ final class List_VC: UIViewController {
         viewModel.onError = { [weak self] errorMessage in
             DispatchQueue.main.async {
                 print("ekrana hata")
-                if self!.viewModel.kategoriTitle == "Flights"{
-                    self!.viewModel.fetchData(kategori: self!.viewModel.kategoriTitle)
+                if self?.viewModel.kategoriTitle == "Flights"{
+                    self?.viewModel.fetchData(kategori: self!.viewModel.kategoriTitle)
                 }
                 //self?.showErrorAlert(message: errorMessage)
             }
@@ -92,12 +97,33 @@ final class List_VC: UIViewController {
     
 }
 extension List_VC: ListViewInterface{
-    
     func configurePage() {
         kategoriTitle_lbl.text = viewModel.kategoriTitle
     }
     
+    func setupActivityIndicator() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .pick
+        activityIndicator.style = UIActivityIndicatorView.Style.large
+        activityIndicator.backgroundColor = (UIColor (white: 0.8, alpha: 0.8))
+        activityIndicator.layer.cornerRadius = 10
+        self.view.addSubview(activityIndicator)
+        }
+    func startActivityIndicator() {
+        print("start")
+        activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+        }
+    }
     func reloadTableView() {
+        print("şimdi")
         tableView.reloadData()
     }
     
