@@ -80,6 +80,7 @@ extension SearchViewModel: SearchViewModelInterface {
     }
     func viewDidAppear() {
         view?.customViewHidden()
+        view?.reloadTableView()
     }
     
     func setSegmentCase(_ segment: Int) {

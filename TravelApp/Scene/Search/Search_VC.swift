@@ -276,6 +276,7 @@ extension Search_VC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension Search_VC: SearchViewInterface {
+    
     func configure() {
         self.segmentedControl.frame = CGRect(x: self.segmentedControl.frame.minX, y: self.segmentedControl.frame.minY, width: segmentedControl.frame.width, height: 60)
         segmentedControl.highlightSelectedSegment()
@@ -287,15 +288,18 @@ extension Search_VC: SearchViewInterface {
         
         flightsToTextField.isHidden = true
     }
+    
     func prepareTableView() {
         let nib = UINib(nibName: "AllTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "AllTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
     func customViewHidden() {
         noDataCustomView.isHidden = true
     }
+    
     func setupActivityIndicator() {
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
