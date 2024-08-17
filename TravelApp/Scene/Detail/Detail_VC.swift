@@ -12,6 +12,7 @@ import Kingfisher
 protocol DetailViewInterface {
     func configureDetailPage()
     func configureDetailBookmarkButtonText()
+    func createHotelArray()
 }
 
 class Detail_VC: UIViewController {
@@ -24,6 +25,12 @@ class Detail_VC: UIViewController {
     var detailCategoriText: String = "?"
     var detailHotelStarCount = 0
     var detailBookmarkButtonText: String = "?"
+    var detailHotelId: String = "?"
+    var detailHotelCountry: String = "?"
+    var detailHotelCity: String = "?"
+    var detailHotelAddress: String = "?"
+    
+    var DetailHotel: [HotelModel] = []
     
     @IBOutlet weak var detailHotelStars: UILabel!
     @IBOutlet weak var detailTextView: UITextView!
@@ -93,10 +100,18 @@ extension Detail_VC: DetailViewInterface{
         if detailBookmarkButton.title(for: .normal) == "Add Bookmark" {
             detailBookmarkButton.setTitle("Remove Bookmark", for: .normal)
             // Add bookmark işlemi burada yapılacak
+            viewModel.detailViewAddBookmarkButtonSaveCoreDate(detailHotel: self.DetailHotel)
+            
         } else {
             detailBookmarkButton.setTitle("Add Bookmark", for: .normal)
             // Remove bookmark işlemi burada yapılacak
+            viewModel.detailViewRemoveBookmarkButtonDeleteCoreDate(hotelId: detailHotelId)
         }
+    }
+    
+    func createHotelArray() {
+        DetailHotel.append(HotelModel(data: [Datum(id: detailHotelId, name: detailTitleText, hotelDescription: detailText, country: detailHotelCountry, city: detailHotelCity, address: detailHotelAddress, mainPhoto: detailImageUrl, stars: Double(detailHotelStarCount))], hotelIDS: ""))
+        print(DetailHotel)
     }
     
 }

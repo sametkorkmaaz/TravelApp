@@ -37,6 +37,7 @@ protocol SearchViewModelInterface {
     func saveHotelCoreData(selectedIndexHotel: IndexPath)
     func deleteHotelCoreData(by hotelId: String)
     func isHotelBookmarked(hotelId: String?) -> Bool
+    
     func saveFlightCoreData(selectedIndexFlight: IndexPath)
     func deleteFlightCoreData(by flightDate: String)
     func isFlightBookmarked(flightDate: String?) -> Bool

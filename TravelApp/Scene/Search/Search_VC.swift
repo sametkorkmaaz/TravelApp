@@ -105,8 +105,12 @@ class Search_VC: UIViewController {
                 destinationVC.detailText = selectedHotel.hotelDescription!
                 destinationVC.detailTitleText = selectedHotel.name!
                 destinationVC.detailImageUrl = selectedHotel.mainPhoto!
+                destinationVC.detailHotelId = selectedHotel.id!
                 destinationVC.detailCategoriText = "Hotel"
                 destinationVC.detailHotelStarCount = Int(selectedHotel.stars!)
+                destinationVC.detailHotelCountry = selectedHotel.country!
+                destinationVC.detailHotelCity = selectedHotel.city!
+                destinationVC.detailHotelAddress = selectedHotel.address!
                 
                // destinationVC.detailBookmarkButtonText = "Deneme Bookmark"
                 let hotel = viewModel.hotels[indexPath]
