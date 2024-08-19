@@ -91,7 +91,7 @@ extension Bookmarks_VC: UITableViewDataSource, UITableViewDelegate {
                 }
             } else {
                 cell.cellImage.image = UIImage(named: "hotel")
-            }
+                }
             cell.cellDescription.text = "\(hotel.hotelCity ?? ""), \(hotel.hotelCountry ?? "")"
             cell.hotelStarCount.text = String(repeating: "⭐️", count: Int(hotel.hotelStars))
             if let countryCode = hotel.hotelCountry?.uppercased() {
@@ -139,7 +139,7 @@ extension Bookmarks_VC: BookmarksViewInterface {
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-
+    
     func deleteRow(at indexPath: IndexPath) {
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }

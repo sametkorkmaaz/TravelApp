@@ -29,9 +29,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="SHOPPING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39h-wp-qzQ">
-                                <rect key="frame" x="10" y="120" width="220" height="15"/>
+                                <rect key="frame" x="10" y="122" width="220" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="tTw-Cq-3zE"/>
+                                    <constraint firstAttribute="height" constant="13" id="tTw-Cq-3zE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" name="blue_text_color"/>
@@ -42,7 +42,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="RVO-72-nL2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -52,7 +52,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5ci-4p-3Yf" secondAttribute="trailing" id="38P-fe-vNv"/>
                             <constraint firstItem="39h-wp-qzQ" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" constant="10" id="7DJ-JN-Kjw"/>
-                            <constraint firstItem="39h-wp-qzQ" firstAttribute="top" secondItem="5ci-4p-3Yf" secondAttribute="bottom" constant="1" id="C9b-pp-hyp"/>
+                            <constraint firstItem="39h-wp-qzQ" firstAttribute="top" secondItem="5ci-4p-3Yf" secondAttribute="bottom" constant="3" id="C9b-pp-hyp"/>
                             <constraint firstItem="5ci-4p-3Yf" firstAttribute="leading" secondItem="9UY-QZ-4uZ" secondAttribute="leading" id="DSq-RO-gKu"/>
                             <constraint firstAttribute="bottom" secondItem="8h2-tt-HQR" secondAttribute="bottom" id="Od3-io-yY2"/>
                             <constraint firstItem="8h2-tt-HQR" firstAttribute="leading" secondItem="39h-wp-qzQ" secondAttribute="leading" id="ThQ-xJ-obv"/>

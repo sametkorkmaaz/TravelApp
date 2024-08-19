@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol HomeViewInterface: AnyObject {
     func configureHome()
     func configureHomeCollectionView()
 }
 class Home_VC: UIViewController {
-
+    
     var viewModel: HomeViewModelInterface!
     
     @IBOutlet weak var homeImage: UIImageView!
@@ -30,38 +31,68 @@ class Home_VC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flightsToList" {
-            // Hedef view controller'ı al
             if let destinationVC = segue.destination as? List_VC {
-                // Hedef view controller'daki değişkene değer ata
                 destinationVC.viewModel = ListViewModel(kategoriTitle: "Flights")
             }
         }
         if segue.identifier == "hotelsToList" {
-            // Hedef view controller'ı al
             if let destinationVC = segue.destination as? List_VC {
-                // Hedef view controller'daki değişkene değer ata
                 destinationVC.viewModel = ListViewModel(kategoriTitle: "Hotel")
             }
         }
+        if segue.identifier == "homeToDetail" {
+            if let destinationVC = segue.destination as? Detail_VC, let indexPath = viewModel.selectedHomeCollectionViewHotelselectedIndexPath {
+                let selectedHotel = HomeCollectionViewData.collectionHotels[indexPath]
+                destinationVC.detailTitleText = (selectedHotel.data?.first?.name)!
+                destinationVC.detailText = (selectedHotel.data?.first?.hotelDescription)!
+                destinationVC.detailImageUrl = (selectedHotel.data?.first?.mainPhoto)!
+                destinationVC.detailHotelId = (selectedHotel.data?.first?.id)!
+                destinationVC.detailCategoriText = "Hotel"
+                destinationVC.detailHotelCity = (selectedHotel.data?.first?.city)!
+                destinationVC.detailHotelStarCount = Int((selectedHotel.data?.first?.stars)!)
+                destinationVC.detailHotelAddress = (selectedHotel.data?.first?.address)!
+                destinationVC.detailHotelCountry = (selectedHotel.data?.first?.country)!
+                let isBookmarked = viewModel.isHotelBookmarked(hotelId: (selectedHotel.data?.first?.id)!)
+                if isBookmarked {
+                    destinationVC.detailBookmarkButtonText = "Remove Bookmark"
+                } else {
+                    destinationVC.detailBookmarkButtonText = "Add Bookmark"
+                }
+            }
+        }
+        
     }
-
+    
     
 }
 // MARK: - Home UICollectionView
 extension Home_VC : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return HomeCollectionViewData.collectionHotels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        let collectionData = HomeCollectionViewData.collectionHotels
         cell.collectionViewDescriptionText.text = "hbsfkjdasbdkjsabdkasbdjhasbdjhasbdjhasbdjhasbdjabsjdas"
-        cell.collectionViewCategoriText.text = "denem"
+        
+        if let hotelName = collectionData[indexPath.row].data?.first?.name {
+            cell.collectionViewCategoriText.text = hotelName
+        } else {
+            cell.collectionViewCategoriText.text = "No Name"
+        }
+        if let hotelImage = collectionData[indexPath.row].data?.first?.mainPhoto {
+            cell.collectionViewImage.kf.setImage(with: URL(string: hotelImage))
+        } else {
+            cell.collectionViewImage.image = UIImage(named: "hotel")
+        }
+        cell.collectionViewDescriptionText.text = collectionData[indexPath.row].data?.first?.hotelDescription
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.selectedHomeCollectionViewHotelselectedIndexPath = indexPath.row
         performSegue(withIdentifier: "homeToDetail", sender: nil)
     }
 }

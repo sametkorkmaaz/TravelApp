@@ -29,7 +29,6 @@ class AllTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        UIHelper.addBorder(self, kalinlik: 0.5, renk: .pick)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -95,6 +95,7 @@ extension ListViewModel: ListViewModelInterface{
             // Gelen verileri mevcut dizinin üzerine yazmak yerine ekleyin
             if let newHotels = response.data {
                 self.hotels.append(contentsOf: newHotels)
+                print(newHotels)
             }
             view?.stopActivityIndicator()
             self.onDataUpdated?()
