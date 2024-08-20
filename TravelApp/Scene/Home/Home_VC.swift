@@ -11,6 +11,7 @@ import Kingfisher
 protocol HomeViewInterface: AnyObject {
     func configureHome()
     func configureHomeCollectionView()
+    func reloadData()
 }
 class Home_VC: UIViewController {
     
@@ -42,22 +43,7 @@ class Home_VC: UIViewController {
         }
         if segue.identifier == "homeToDetail" {
             if let destinationVC = segue.destination as? Detail_VC, let indexPath = viewModel.selectedHomeCollectionViewHotelselectedIndexPath {
-                let selectedHotel = HomeCollectionViewData.collectionHotels[indexPath]
-                destinationVC.detailTitleText = (selectedHotel.data?.first?.name)!
-                destinationVC.detailText = (selectedHotel.data?.first?.hotelDescription)!
-                destinationVC.detailImageUrl = (selectedHotel.data?.first?.mainPhoto)!
-                destinationVC.detailHotelId = (selectedHotel.data?.first?.id)!
-                destinationVC.detailCategoriText = "Hotel"
-                destinationVC.detailHotelCity = (selectedHotel.data?.first?.city)!
-                destinationVC.detailHotelStarCount = Int((selectedHotel.data?.first?.stars)!)
-                destinationVC.detailHotelAddress = (selectedHotel.data?.first?.address)!
-                destinationVC.detailHotelCountry = (selectedHotel.data?.first?.country)!
-                let isBookmarked = viewModel.isHotelBookmarked(hotelId: (selectedHotel.data?.first?.id)!)
-                if isBookmarked {
-                    destinationVC.detailBookmarkButtonText = "Remove Bookmark"
-                } else {
-                    destinationVC.detailBookmarkButtonText = "Add Bookmark"
-                }
+                viewModel.configureDetailVC(destinationVC, at: indexPath)
             }
         }
         
@@ -69,25 +55,14 @@ class Home_VC: UIViewController {
 extension Home_VC : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return HomeCollectionViewData.collectionHotels.count
+        return viewModel.numberOfHotels()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        let collectionData = HomeCollectionViewData.collectionHotels
-        cell.collectionViewDescriptionText.text = "hbsfkjdasbdkjsabdkasbdjhasbdjhasbdjhasbdjhasbdjabsjdas"
-        
-        if let hotelName = collectionData[indexPath.row].data?.first?.name {
-            cell.collectionViewCategoriText.text = hotelName
-        } else {
-            cell.collectionViewCategoriText.text = "No Name"
+        if let hotelData = viewModel.getHotel(at: indexPath) {
+            cell.configure(with: hotelData)
         }
-        if let hotelImage = collectionData[indexPath.row].data?.first?.mainPhoto {
-            cell.collectionViewImage.kf.setImage(with: URL(string: hotelImage))
-        } else {
-            cell.collectionViewImage.image = UIImage(named: "hotel")
-        }
-        cell.collectionViewDescriptionText.text = collectionData[indexPath.row].data?.first?.hotelDescription
         return cell
     }
     
@@ -120,5 +95,9 @@ extension Home_VC: HomeViewInterface{
     
     func configureHomeCollectionView() {
         homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
+    }
+    
+    func reloadData() {
+        homeCollectionView.reloadData()
     }
 }

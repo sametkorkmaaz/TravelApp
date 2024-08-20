@@ -27,8 +27,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
             print("Font yüklenemedi.")
         }
     }
-    
-
+    func configure(with hotelData: Datum) {
+        collectionViewCategoriText.text = hotelData.name
+        collectionViewDescriptionText.text = hotelData.hotelDescription
+        if let imageUrl = hotelData.mainPhoto, !imageUrl.isEmpty {
+            collectionViewImage.kf.setImage(with: URL(string: imageUrl))
+        } else {
+            collectionViewImage.image = UIImage(named: "hotelPlaceholder")
         }
+    }
+    
+}
 
 
