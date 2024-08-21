@@ -22,7 +22,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage" translatesAutoresizingMaskIntoConstraints="NO" id="5ci-4p-3Yf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="119"/>
-                                <color key="backgroundColor" red="0.63529413940000001" green="0.63137257099999999" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="pick_color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="FXG-8M-ncv"/>
                                     <constraint firstAttribute="height" constant="119" id="g2b-ap-95c"/>
@@ -89,6 +89,9 @@
         </namedColor>
         <namedColor name="neon_white">
             <color red="1" green="1" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pick_color">
+            <color red="1" green="0.27843137254901962" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

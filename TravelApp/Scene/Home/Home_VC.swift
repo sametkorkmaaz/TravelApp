@@ -72,9 +72,6 @@ extension Home_VC : UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-
-
-
 extension Home_VC: HomeViewInterface{
     
     func configureHome(){

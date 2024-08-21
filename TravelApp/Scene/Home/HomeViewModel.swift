@@ -34,7 +34,7 @@ final class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelInterface{
-    
+
     func viewDidLoad() {
         view?.configureHome()
         prepareHomeCollectionView()
