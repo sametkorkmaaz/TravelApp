@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zd-K4-1mQ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="519"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage 1" translatesAutoresizingMaskIntoConstraints="NO" id="OHK-xo-Jyi">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fprest" translatesAutoresizingMaskIntoConstraints="NO" id="OHK-xo-Jyi">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="519"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-W2-B8k">
@@ -570,15 +570,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GP2-hu-Yqy"/>
+        <segue reference="HKJ-lA-AaU"/>
         <segue reference="hzO-HA-6gQ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="airplane.departure" catalog="system" width="128" height="84"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
+        <image name="fprest" width="1024" height="1024"/>
         <image name="homeImage" width="1779" height="1000"/>
-        <image name="homeImage 1" width="1792" height="1024"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.lodge.fill" catalog="system" width="128" height="63"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
@@ -601,7 +601,7 @@
             <color red="0.16078431372549021" green="0.17254901960784313" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

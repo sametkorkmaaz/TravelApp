@@ -80,8 +80,8 @@ extension Home_VC: HomeViewInterface{
         } else {
             print("Font yüklenemedi.")
         }
-        UIHelper.addShadow(flights_btn, renk: .red, opaklik: 0.8, radius: 10.0, offset: CGSize(width: 5, height: 5))
-        UIHelper.addShadow(hotels_btn, renk: .red, opaklik: 0.8, radius: 10.0, offset: CGSize(width: 5, height: 5))
+        UIHelper.addShadow(flights_btn, renk: .pick, opaklik: 0.8, radius: 10.0, offset: CGSize(width: 5, height: 5))
+        UIHelper.addShadow(hotels_btn, renk: .pick, opaklik: 0.8, radius: 10.0, offset: CGSize(width: 5, height: 5))
         
         UIHelper.roundCorners(flights_btn, radius: 10.0)
         UIHelper.roundCorners(hotels_btn, radius: 10.0)
