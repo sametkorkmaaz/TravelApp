@@ -11,8 +11,22 @@ class Tabbar_VC: UITabBarController {
     
     @IBOutlet weak var tabbar: UITabBar!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.viewDidLoad()
+        
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        
+        appearance.stackedLayoutAppearance.normal.iconColor = .black
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +55,7 @@ class Tabbar_VC: UITabBarController {
         let radius: CGFloat = 35.0
         let circleLayer = CAShapeLayer()
         circleLayer.name = "circleBackground"
-        circleLayer.path = UIBezierPath(roundedRect: CGRect(x: view.bounds.midX - radius, y: view.bounds.midY - radius, width: 2 * radius, height: 2 * radius), cornerRadius: radius).cgPath
+        circleLayer.path = UIBezierPath(roundedRect: CGRect(x: view.bounds.midX - radius - 10, y: view.bounds.midY - radius + 10, width: 2.5 * radius, height: 1.5 * radius), cornerRadius: radius).cgPath
         circleLayer.fillColor = UIColor.pick.cgColor
         view.layer.insertSublayer(circleLayer, at: 0)
     }
