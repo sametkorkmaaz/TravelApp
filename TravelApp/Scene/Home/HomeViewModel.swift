@@ -24,7 +24,7 @@ protocol HomeViewModelInterface {
 final class HomeViewModel {
     weak var view: HomeViewInterface?
     var selectedHomeCollectionViewHotelselectedIndexPath: Int?
-    private var hotels: [HotelModel] = []
+    var hotels: [HotelModel] = []
     
     init(view: HomeViewInterface) {
         self.view = view

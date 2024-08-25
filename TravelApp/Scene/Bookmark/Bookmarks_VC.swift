@@ -19,7 +19,6 @@ protocol BookmarksViewInterface: AnyObject {
 
 class Bookmarks_VC: UIViewController {
     var viewModel: BookmarksViewModelInterface!
-    var manager: SearchViewModelInterface!
     
     @IBOutlet weak var tableView: UITableView!
     
