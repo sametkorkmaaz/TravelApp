@@ -51,7 +51,7 @@ extension DetailViewModel: DetailViewModelInterface{
         // Create a new Hotel entity
         let entity = NSEntityDescription.entity(forEntityName: "Hotel", in: managedContext)!
         let hotel = NSManagedObject(entity: entity, insertInto: managedContext)
-        
+        AnalyticsManager.shared.log(.addBookmarkHotel(.init(hotel_name: selectedHotel.name!, hotel_id: selectedHotel.id!, hotel_country_code: selectedHotel.country!, hotel_city: selectedHotel.city!, origin: "DetailView")))
         // Set the values for the entity
         hotel.setValue(selectedHotel.id, forKeyPath: "hotelId")
         hotel.setValue(selectedHotel.name, forKeyPath: "hotelName")

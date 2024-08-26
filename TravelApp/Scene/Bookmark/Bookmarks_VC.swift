@@ -40,6 +40,7 @@ class Bookmarks_VC: UIViewController {
             
             switch viewModel.items[indexPath] {
             case .hotel(let hotel):
+                AnalyticsManager.shared.log(.lookDetailHotel(.init(hotel_name: hotel.hotelName!, hotel_id: hotel.hotelId!, hotel_country_code: hotel.hotelCountry!, hotel_city: hotel.hotelCity!, origin: "BookmarkView")))
                 destinationVC.detailText = hotel.hotelDescription ?? ""
                 destinationVC.detailTitleText = hotel.hotelName ?? ""
                 destinationVC.detailImageUrl = hotel.hotelMainPhoto ?? ""
@@ -48,6 +49,7 @@ class Bookmarks_VC: UIViewController {
                 destinationVC.detailBookmarkButtonText = "Remove Bookmark"
                 
             case .flight(let flight):
+                AnalyticsManager.shared.log(.lookDetailFlight(.init(flight_airport_name: flight.flightAirport!, flight_arrival_city: flight.flightArrivalCity!, flight_arrival_city_country_code: flight.flightArrivalCountryCode!, origin: "BookmarkView")))
                 destinationVC.detailText = "Departure: \(flight.flightDepartureCity ?? "")\nArrival: \(flight.flightArrivalCity ?? "")\nAirport: \(flight.flightAirport ?? "")\nDate: \(flight.flightDate ?? "")\nPrice: \(flight.flightPrice ?? "")"
                 destinationVC.detailTitleText = "\(flight.flightDepartureCity ?? "") → \(flight.flightArrivalCity ?? "")"
                 destinationVC.detailImageUrl = "" // You might want to set a default image or URL here

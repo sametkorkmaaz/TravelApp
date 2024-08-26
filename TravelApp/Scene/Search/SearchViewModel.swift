@@ -10,6 +10,7 @@ import Alamofire
 import GoogleGenerativeAI
 import CoreData
 import UIKit
+import FirebaseAnalytics
 
 protocol SearchViewModelInterface {
     var view: SearchViewInterface? { get set }
@@ -144,6 +145,9 @@ extension SearchViewModel: SearchViewModelInterface {
             guard let self = self else { return }
             self.hotels = response.data ?? []
             self.onDataUpdated?()
+            if hotels.count > 0 {
+                AnalyticsManager.shared.log(.searchHotel(.init(hotel_city: cityName, hotel_country_code: countryCode, timestamp: Date(), origin: "SearchView")))
+            }
         }, onError: { [weak self] error in
             self?.onError?(error.localizedDescription)
         })
@@ -167,6 +171,7 @@ extension SearchViewModel: SearchViewModelInterface {
     }
     
     func updatePrompt(from: String?, to: String?) {
+        AnalyticsManager.shared.log(.searchFlight(.init(searchLocationName: to!, timestamp: Date(), origin: "SearcView")))
         prompt = """
         Bana sana vereceğim 2 şehir arasında 20.08.2024 ve sonrasında giden güncel 10 adet uçak bileti bilgisini JSON verisi olarak ver. \
         Sana gönderdiğim şehir isimleri geçersizse dönüş olarak sadece error yaz. Sana sorduğum şehir isimleri dünyada yoksa dönüş olarak JSON verme sadece metin olarak 'Error' yaz. \
@@ -186,7 +191,7 @@ extension SearchViewModel: SearchViewModelInterface {
         // Create a new Hotel entity
         let entity = NSEntityDescription.entity(forEntityName: "Hotel", in: managedContext)!
         let hotel = NSManagedObject(entity: entity, insertInto: managedContext)
-        
+        AnalyticsManager.shared.log(.addBookmarkHotel(.init(hotel_name: selectedHotel.name!, hotel_id: selectedHotel.id!, hotel_country_code: selectedHotel.country!, hotel_city: selectedHotel.city!, origin: "SearchView")))
         // Set the values for the entity
         hotel.setValue(selectedHotel.id, forKeyPath: "hotelId")
         hotel.setValue(selectedHotel.name, forKeyPath: "hotelName")
@@ -259,6 +264,7 @@ extension SearchViewModel: SearchViewModelInterface {
         let entity = NSEntityDescription.entity(forEntityName: "Flight", in: managedContext)!
         let flight = NSManagedObject(entity: entity, insertInto: managedContext)
         
+        AnalyticsManager.shared.log(.addBookmarkFlight(.init(flight_airport_name: selectedFlight.airport!, flight_arrival_city: selectedFlight.arrivalCity!, flight_arrival_city_country_code: selectedFlight.arrivalCountryCode!, origin: "SearchView")))
         // Set the values for the entity
         flight.setValue(selectedFlight.price, forKeyPath: "flightPrice")
         flight.setValue(selectedFlight.departureCity, forKeyPath: "flightDepartureCity")

@@ -13,6 +13,7 @@ protocol DetailViewInterface {
     func configureDetailPage()
     func configureDetailBookmarkButtonText()
     func createHotelArray()
+    
 }
 
 class Detail_VC: UIViewController {

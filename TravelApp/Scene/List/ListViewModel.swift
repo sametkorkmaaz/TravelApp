@@ -117,7 +117,7 @@ extension ListViewModel: ListViewModelInterface{
         // Create a new Hotel entity
         let entity = NSEntityDescription.entity(forEntityName: "Hotel", in: managedContext)!
         let hotel = NSManagedObject(entity: entity, insertInto: managedContext)
-        
+        AnalyticsManager.shared.log(.addBookmarkHotel(.init(hotel_name: selectedHotel.name!, hotel_id: selectedHotel.id!, hotel_country_code: selectedHotel.country!, hotel_city: selectedHotel.city!, origin: "ListView")))
         // Set the values for the entity
         hotel.setValue(selectedHotel.id, forKeyPath: "hotelId")
         hotel.setValue(selectedHotel.name, forKeyPath: "hotelName")
@@ -249,6 +249,7 @@ extension ListViewModel: ListViewModelInterface{
         let entity = NSEntityDescription.entity(forEntityName: "Flight", in: managedContext)!
         let flight = NSManagedObject(entity: entity, insertInto: managedContext)
         
+        AnalyticsManager.shared.log(.addBookmarkFlight(.init(flight_airport_name: selectedFlight.airport!, flight_arrival_city: selectedFlight.arrivalCity!, flight_arrival_city_country_code: selectedFlight.arrivalCountryCode!, origin: "ListView")))
         // Set the values for the entity
         flight.setValue(selectedFlight.price, forKeyPath: "flightPrice")
         flight.setValue(selectedFlight.departureCity, forKeyPath: "flightDepartureCity")

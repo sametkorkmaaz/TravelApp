@@ -25,6 +25,8 @@
 		114B41D92C7BD77500F5C1EE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 114B41D82C7BD77500F5C1EE /* FirebaseCrashlytics */; };
 		114B41DB2C7BD79F00F5C1EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 114B41DA2C7BD79F00F5C1EE /* GoogleService-Info.plist */; };
 		114B41DC2C7BD79F00F5C1EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 114B41DA2C7BD79F00F5C1EE /* GoogleService-Info.plist */; };
+		114B41DF2C7CB87500F5C1EE /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B41DE2C7CB87500F5C1EE /* AnalyticsManager.swift */; };
+		114B41E02C7CB87500F5C1EE /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B41DE2C7CB87500F5C1EE /* AnalyticsManager.swift */; };
 		114FE5E12C4E6A2D00B8A35F /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FE5E02C4E6A2D00B8A35F /* FlightModel.swift */; };
 		115370F42C7606B100D429E0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 115370F32C7606B100D429E0 /* IQKeyboardManagerSwift */; };
 		1157EDED2C481627004AB876 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1157EDEC2C481627004AB876 /* Kingfisher */; };
@@ -85,6 +87,7 @@
 		114AD3842C49AA8C0036F32B /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		114AD3862C49B25B0036F32B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		114B41DA2C7BD79F00F5C1EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		114B41DE2C7CB87500F5C1EE /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		114FE5E02C4E6A2D00B8A35F /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		1165DE7A2C3E67D700FDD934 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1165DE7D2C3E67D700FDD934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 		114AD3812C49A9FB0036F32B /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				114B41DD2C7CB85000F5C1EE /* AnalyticsManager */,
 				114AD3822C49AA3E0036F32B /* ServiceManager */,
 				114AD3832C49AA4D0036F32B /* WebService */,
 			);
@@ -179,6 +183,14 @@
 				117BB9562C4119FC005A3AFA /* APIKey.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		114B41DD2C7CB85000F5C1EE /* AnalyticsManager */ = {
+			isa = PBXGroup;
+			children = (
+				114B41DE2C7CB87500F5C1EE /* AnalyticsManager.swift */,
+			);
+			path = AnalyticsManager;
 			sourceTree = "<group>";
 		};
 		1165DE712C3E67D700FDD934 = {
@@ -515,6 +527,7 @@
 				11719B572C4C706C001EBFC0 /* ListViewModel.swift in Sources */,
 				11CA862A2C3FDBD200D98EA0 /* Detail_VC.swift in Sources */,
 				11B495FE2C726B04001F35C5 /* HomeCollectionViewData.swift in Sources */,
+				114B41DF2C7CB87500F5C1EE /* AnalyticsManager.swift in Sources */,
 				11719B552C4C7064001EBFC0 /* DetailViewModel.swift in Sources */,
 				114AD3872C49B25B0036F32B /* WebService.swift in Sources */,
 				1165DE972C3E6E6300FDD934 /* Search_VC.swift in Sources */,
@@ -541,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				114B41E02C7CB87500F5C1EE /* AnalyticsManager.swift in Sources */,
 				11BA86C42C7A2EAA008E509E /* TravelAppTests.swift in Sources */,
 				11BA86CE2C7A3079008E509E /* MockHome_VC.swift in Sources */,
 				11BA86CC2C7A2FAF008E509E /* HomeViewModelTest.swift in Sources */,

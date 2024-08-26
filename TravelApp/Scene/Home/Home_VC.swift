@@ -7,7 +7,6 @@
 
 import UIKit
 import Kingfisher
-import FirebaseAnalytics
 
 protocol HomeViewInterface: AnyObject {
     func configureHome()
@@ -29,18 +28,10 @@ class Home_VC: UIViewController {
         super.viewDidLoad()
         viewModel = HomeViewModel(view: self)
         viewModel.viewDidLoad()
-        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
-          AnalyticsParameterItemID: "id-1234567890",
-          AnalyticsParameterItemName: "denemedeneme",
-          AnalyticsParameterContentType: "cont",
-        ])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flightsToList" {
-            Analytics.logEvent("press_flights_button", parameters: [
-                "nereden": "sametsamet"
-            ])
             if let destinationVC = segue.destination as? List_VC {
                 destinationVC.viewModel = ListViewModel(kategoriTitle: "Flights")
             }

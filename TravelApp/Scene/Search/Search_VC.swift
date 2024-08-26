@@ -102,6 +102,7 @@ class Search_VC: UIViewController {
             // Pass the selected data to the destination view controller
             if viewModel.segmentCase == 0 {
                 let selectedHotel = viewModel.hotels[indexPath]
+                AnalyticsManager.shared.log(.lookDetailHotel(.init(hotel_name: selectedHotel.name!, hotel_id: selectedHotel.id!, hotel_country_code: selectedHotel.country!, hotel_city: selectedHotel.city!, origin: "SearchView")))
                 destinationVC.detailText = selectedHotel.hotelDescription!
                 destinationVC.detailTitleText = selectedHotel.name!
                 destinationVC.detailImageUrl = selectedHotel.mainPhoto!
@@ -125,6 +126,7 @@ class Search_VC: UIViewController {
             }
             if viewModel.segmentCase == 1 {
                 let selectedFlight = viewModel.flights[indexPath]
+                AnalyticsManager.shared.log(.lookDetailFlight(.init(flight_airport_name: selectedFlight.airport!, flight_arrival_city: selectedFlight.arrivalCity!, flight_arrival_city_country_code: selectedFlight.arrivalCountryCode!, origin: "SearchView")))
                 destinationVC.detailImageUrl = viewModel.cityImageUrls[indexPath]
                 destinationVC.detailTitleText = "İstanbul → " + " \(flightsToTextField.text!)"
                 destinationVC.detailCategoriText = "Flight"
