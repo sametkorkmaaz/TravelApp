@@ -80,7 +80,7 @@ extension SearchViewModel: SearchViewModelInterface {
         view?.setupActivityIndicator()
     }
     func viewDidAppear() {
-        view?.customViewHidden()
+        view?.customViewHidden(bool: true)
         view?.reloadTableView()
     }
     
@@ -102,7 +102,7 @@ extension SearchViewModel: SearchViewModelInterface {
         if segmentCase == 0 {
             searchData(countryCode: selectedCountry, cityName: searchText ?? "")
         } else if segmentCase == 1 {
-            view?.customViewHidden()
+            view?.customViewHidden(bool: true)
             view?.startActivityIndicator()
             sendMessageCityImage(cityName: flightToText ?? "")
             updatePrompt(from: flightFromText, to: flightToText)
@@ -118,6 +118,8 @@ extension SearchViewModel: SearchViewModelInterface {
             do {
                 let response = try await model.generateContent(prompt)
                 guard let text = response.text else {
+                    view?.stopActivityIndicator()
+                    self.flights = []
                     self.onError?("No response text")
                     return
                 }
@@ -129,18 +131,25 @@ extension SearchViewModel: SearchViewModelInterface {
                         view?.stopActivityIndicator()
                         self.onDataUpdated?()
                     } catch {
+                        self.flights = []
+                        view?.stopActivityIndicator()
                         self.onError?("JSON decode error: \(error)")
                     }
                 } else {
+                    self.flights = []
+                    view?.stopActivityIndicator()
                     self.onError?("Data conversion error")
                 }
             } catch {
+                self.flights = []
+                view?.stopActivityIndicator()
                 self.onError?("Error: \(error)")
             }
         }
     }
     
     func searchData(countryCode: String, cityName: String) {
+        print("searchData")
         webService.fetchHotels(countryCode: countryCode, cityName: cityName, limit: 15, onSuccess: { [weak self] (response: HotelModel) in
             guard let self = self else { return }
             self.hotels = response.data ?? []
@@ -149,6 +158,7 @@ extension SearchViewModel: SearchViewModelInterface {
                 AnalyticsManager.shared.log(.searchHotel(.init(hotel_city: cityName, hotel_country_code: countryCode, timestamp: Date(), origin: "SearchView")))
             }
         }, onError: { [weak self] error in
+            self?.hotels = []
             self?.onError?(error.localizedDescription)
         })
     }

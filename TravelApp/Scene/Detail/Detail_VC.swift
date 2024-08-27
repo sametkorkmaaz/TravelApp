@@ -111,7 +111,7 @@ extension Detail_VC: DetailViewInterface{
     }
     
     func createHotelArray() {
-        DetailHotel.append(HotelModel(data: [Datum(id: detailHotelId, name: detailTitleText, hotelDescription: detailText, country: detailHotelCountry, city: detailHotelCity, address: detailHotelAddress, mainPhoto: detailImageUrl, stars: Double(detailHotelStarCount))], hotelIDS: ""))
+        DetailHotel.append(HotelModel(data: [Datum(id: detailHotelId, name: detailTitleText, hotelDescription: detailText, country: detailHotelCountry, city: detailHotelCity, address: detailHotelAddress, mainPhoto: detailImageUrl, stars: Double(detailHotelStarCount))], hotelIDS: [""]))
         print(DetailHotel)
     }
     

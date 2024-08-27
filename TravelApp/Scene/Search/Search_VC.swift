@@ -6,7 +6,7 @@ import Alamofire
 protocol SearchViewInterface: AnyObject {
     func prepareTableView()
     func reloadTableView()
-    func customViewHidden()
+    func customViewHidden(bool: Bool)
     func displayError(_ error: String)
     func configure()
     func setupActivityIndicator()
@@ -47,6 +47,7 @@ class Search_VC: UIViewController {
         }
         viewModel.onError = { [weak self] errorMessage in
             DispatchQueue.main.async {
+                self?.tableView.reloadData()
                 self?.showErrorAlert(message: errorMessage)
             }
         }
@@ -206,18 +207,18 @@ extension Search_VC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewModel.segmentCase == 0 {
             if viewModel.hotels.count == 0 {
-                noDataCustomView.isHidden = false
+                customViewHidden(bool: false)
                 return viewModel.hotels.count
             } else{
-                noDataCustomView.isHidden = true
+                customViewHidden(bool: true)
                 return viewModel.hotels.count
             }
         }else {
             if viewModel.flights.count == 0 {
-                noDataCustomView.isHidden = false
+                customViewHidden(bool: false)
                 return viewModel.flights.count
             } else{
-                noDataCustomView.isHidden = true
+                customViewHidden(bool: true)
                 return viewModel.flights.count
             }
         }
@@ -262,7 +263,9 @@ extension Search_VC: UITableViewDataSource, UITableViewDelegate {
             if viewModel.flights.count <= viewModel.cityImageUrls.count {
                 cell.cellImage.kf.setImage(with: URL(string: viewModel.cityImageUrls[indexPath.row]))
             } else {
-                cell.cellImage.kf.setImage(with: URL(string: viewModel.cityImageUrls.randomElement()!))
+                if viewModel.cityImageUrls.count > 0 {
+                    cell.cellImage.kf.setImage(with: URL(string: viewModel.cityImageUrls.randomElement()!))
+                }
             }
 
             cell.cellCountryFlag.kf.setImage(with: URL(string: "https://flagsapi.com/\(flight.arrivalCountryCode!)/flat/64.png")!)
@@ -298,8 +301,8 @@ extension Search_VC: SearchViewInterface {
         tableView.delegate = self
     }
     
-    func customViewHidden() {
-        noDataCustomView.isHidden = true
+    func customViewHidden(bool: Bool) {
+        noDataCustomView.isHidden = bool
     }
     
     func setupActivityIndicator() {

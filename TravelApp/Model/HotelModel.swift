@@ -10,7 +10,7 @@ import Foundation
 // MARK: - HotelModel
 struct HotelModel: Codable {
     let data: [Datum]?
-    let hotelIDS: String?
+    let hotelIDS: [String]?
 
     enum CodingKeys: String, CodingKey {
         case data
