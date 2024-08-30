@@ -16,4 +16,6 @@ TravelApp iOS mobil uygulamamda dilediğiniz ülke, şehir veya tatil beldelerin
 + UITableView & UICollectionView & UITabbarController ✅
 + Kingfisher ✅
 
+![splash kopyası](https://github.com/user-attachments/assets/fbe828b1-a09e-4ff2-b8d0-bf488e2ed446)
+
 
