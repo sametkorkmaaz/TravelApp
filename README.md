@@ -16,6 +16,9 @@ TravelApp iOS mobil uygulamamda dilediğiniz ülke, şehir veya tatil beldelerin
 + Firebase Analytics & Firebase Crashlytics ✅
 + UITableView & UICollectionView & UITabbarController ✅
 + Kingfisher ✅
+  
+## Home Screen
+https://user-images.githubusercontent.com/97698649/176423470-36cbffa8-a087-4c76-ba5e-8843f1487963.mov
 
 ## Home Screen
 <img width="700" alt="home" src="https://github.com/user-attachments/assets/6935ba7e-fcf6-4961-8662-cb02bfff8516">
