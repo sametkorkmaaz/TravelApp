@@ -18,7 +18,7 @@ TravelApp iOS mobil uygulamamda dilediğiniz ülke, şehir veya tatil beldelerin
 + Kingfisher ✅
 + Swift Package Mmanager ✅
 
-https://youtu.be/RI7MiXTpl3k
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=RI7MiXTpl3k)
 
 ### :camera: Home Screen
 <img width="700" alt="home" src="https://github.com/user-attachments/assets/6935ba7e-fcf6-4961-8662-cb02bfff8516">
