@@ -18,7 +18,7 @@ TravelApp iOS mobil uygulamamda dilediğiniz ülke, şehir veya tatil beldelerin
 + Kingfisher ✅
 + Swift Package Mmanager ✅
 
-## :movie_camera: Uygulama Ekran Kaydını 
+## :movie_camera: Uygulama ekran kaydını aşağıdaki görsele tıklayarak izleyebilirsiniz
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/RI7MiXTpl3k/0.jpg)](https://www.youtube.com/watch?v=RI7MiXTpl3k)
 
 ### :camera: Home Screen
