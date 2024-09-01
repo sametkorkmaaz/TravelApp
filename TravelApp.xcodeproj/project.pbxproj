@@ -49,6 +49,8 @@
 		117BB9552C4117E4005A3AFA /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 117BB9542C4117E4005A3AFA /* GoogleGenerativeAI */; };
 		117BB9572C4119FC005A3AFA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BB9562C4119FC005A3AFA /* APIKey.swift */; };
 		117BB9592C411A62005A3AFA /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 117BB9582C411A62005A3AFA /* GenerativeAI-Info.plist */; };
+		118426242C84F6B9003BC722 /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118426232C84F6B9003BC722 /* TravelAppUITests.swift */; };
+		118426262C84F6B9003BC722 /* TravelAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118426252C84F6B9003BC722 /* TravelAppUITestsLaunchTests.swift */; };
 		119761EF2C3E8252003C941E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119761EE2C3E8252003C941E /* UIHelper.swift */; };
 		119761F62C3EA2E3003C941E /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119761F42C3EA2E3003C941E /* HomeCollectionViewCell.swift */; };
 		119761F72C3EA2E3003C941E /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119761F52C3EA2E3003C941E /* HomeCollectionViewCell.xib */; };
@@ -65,6 +67,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		118426272C84F6B9003BC722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1165DE722C3E67D700FDD934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1165DE792C3E67D700FDD934;
+			remoteInfo = TravelApp;
+		};
 		11BA86C52C7A2EAA008E509E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1165DE722C3E67D700FDD934 /* Project object */;
@@ -110,6 +119,9 @@
 		11719B622C4C7178001EBFC0 /* AllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTableViewCell.xib; sourceTree = "<group>"; };
 		117BB9562C4119FC005A3AFA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		117BB9582C411A62005A3AFA /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
+		118426212C84F6B9003BC722 /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		118426232C84F6B9003BC722 /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
+		118426252C84F6B9003BC722 /* TravelAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		119761EE2C3E8252003C941E /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		119761F42C3EA2E3003C941E /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		119761F52C3EA2E3003C941E /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -138,6 +150,13 @@
 				114B41D92C7BD77500F5C1EE /* FirebaseCrashlytics in Frameworks */,
 				114B41D32C7BD77500F5C1EE /* FirebaseAnalytics in Frameworks */,
 				117BB9552C4117E4005A3AFA /* GoogleGenerativeAI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1184261E2C84F6B9003BC722 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +217,7 @@
 			children = (
 				1165DE7C2C3E67D700FDD934 /* TravelApp */,
 				11BA86C22C7A2EAA008E509E /* TravelAppTests */,
+				118426222C84F6B9003BC722 /* TravelAppUITests */,
 				1165DE7B2C3E67D700FDD934 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -207,6 +227,7 @@
 			children = (
 				1165DE7A2C3E67D700FDD934 /* TravelApp.app */,
 				11BA86C12C7A2EAA008E509E /* TravelAppTests.xctest */,
+				118426212C84F6B9003BC722 /* TravelAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +341,15 @@
 			path = AllTableViewCells;
 			sourceTree = "<group>";
 		};
+		118426222C84F6B9003BC722 /* TravelAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				118426232C84F6B9003BC722 /* TravelAppUITests.swift */,
+				118426252C84F6B9003BC722 /* TravelAppUITestsLaunchTests.swift */,
+			);
+			path = TravelAppUITests;
+			sourceTree = "<group>";
+		};
 		1187CC182C3EAC4000BA1A00 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +450,24 @@
 			productReference = 1165DE7A2C3E67D700FDD934 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		118426202C84F6B9003BC722 /* TravelAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1184262B2C84F6B9003BC722 /* Build configuration list for PBXNativeTarget "TravelAppUITests" */;
+			buildPhases = (
+				1184261D2C84F6B9003BC722 /* Sources */,
+				1184261E2C84F6B9003BC722 /* Frameworks */,
+				1184261F2C84F6B9003BC722 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				118426282C84F6B9003BC722 /* PBXTargetDependency */,
+			);
+			name = TravelAppUITests;
+			productName = TravelAppUITests;
+			productReference = 118426212C84F6B9003BC722 /* TravelAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		11BA86C02C7A2EAA008E509E /* TravelAppTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11BA86C72C7A2EAA008E509E /* Build configuration list for PBXNativeTarget "TravelAppTests" */;
@@ -451,6 +499,10 @@
 					1165DE792C3E67D700FDD934 = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					118426202C84F6B9003BC722 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 1165DE792C3E67D700FDD934;
+					};
 					11BA86C02C7A2EAA008E509E = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 1165DE792C3E67D700FDD934;
@@ -479,6 +531,7 @@
 			targets = (
 				1165DE792C3E67D700FDD934 /* TravelApp */,
 				11BA86C02C7A2EAA008E509E /* TravelAppTests */,
+				118426202C84F6B9003BC722 /* TravelAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -502,6 +555,13 @@
 				1136349D2C5E98D1007B807F /* Montserrat-Regular.ttf in Resources */,
 				11719B642C4C7178001EBFC0 /* AllTableViewCell.xib in Resources */,
 				114B41DB2C7BD79F00F5C1EE /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1184261F2C84F6B9003BC722 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +636,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1184261D2C84F6B9003BC722 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				118426262C84F6B9003BC722 /* TravelAppUITestsLaunchTests.swift in Sources */,
+				118426242C84F6B9003BC722 /* TravelAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11BA86BD2C7A2EAA008E509E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -590,6 +659,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		118426282C84F6B9003BC722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1165DE792C3E67D700FDD934 /* TravelApp */;
+			targetProxy = 118426272C84F6B9003BC722 /* PBXContainerItemProxy */;
+		};
 		11BA86C62C7A2EAA008E509E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1165DE792C3E67D700FDD934 /* TravelApp */;
@@ -800,6 +874,41 @@
 			};
 			name = Release;
 		};
+		118426292C84F6B9003BC722 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = NVGTF49M8Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sametkorkmaz.TravelAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelApp;
+			};
+			name = Debug;
+		};
+		1184262A2C84F6B9003BC722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NVGTF49M8Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sametkorkmaz.TravelAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelApp;
+			};
+			name = Release;
+		};
 		11BA86C82C7A2EAA008E509E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -853,6 +962,15 @@
 			buildConfigurations = (
 				1165DE8F2C3E67D800FDD934 /* Debug */,
 				1165DE902C3E67D800FDD934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1184262B2C84F6B9003BC722 /* Build configuration list for PBXNativeTarget "TravelAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				118426292C84F6B9003BC722 /* Debug */,
+				1184262A2C84F6B9003BC722 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

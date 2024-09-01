@@ -41,6 +41,17 @@
                ReferencedContainer = "container:TravelApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "118426202C84F6B9003BC722"
+               BuildableName = "TravelAppUITests.xctest"
+               BlueprintName = "TravelAppUITests"
+               ReferencedContainer = "container:TravelApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
