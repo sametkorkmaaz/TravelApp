@@ -12,11 +12,11 @@ TravelApp iOS mobil uygulamamda dilediğiniz ülke, şehir veya tatil beldelerin
 + Unit Test & UI test ✅
 + Alamofire ✅ 
 + Kingfisher ✅ 
-+ Google Gemini AI API ✅
++ Google AI SDK for Swift ✅
 + Firebase Analytics & Firebase Crashlytics ✅
 + UITableView & UICollectionView & UITabbarController ✅
 + Kingfisher ✅
-+ Swift Package Mmanager ✅
++ Swift Package Manager ✅
 
 ## :movie_camera: Uygulama ekran kaydını aşağıdaki görsele tıklayarak izleyebilirsiniz
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/RI7MiXTpl3k/0.jpg)](https://www.youtube.com/watch?v=RI7MiXTpl3k)
